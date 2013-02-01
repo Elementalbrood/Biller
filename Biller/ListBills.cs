@@ -18,9 +18,6 @@ namespace Biller
 	/// </summary>
 	public partial class ListBills : Form
 	{
-		
-		
-		
 		public ListBills()
 		{
 			//
@@ -28,17 +25,13 @@ namespace Biller
 			//
 			InitializeComponent();
 			
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
-			
 			if(Data._bills.Count > 0)
 			{
 				billDisplay.DataSource = getResults();
 			}
 			else
 			{
-				
+				//TODO would be cool if it would say something if you didn't have any bills
 			}
 		}
 		
@@ -52,7 +45,7 @@ namespace Biller
 			
 			foreach(Bill b in Data._bills)
 			{
-				d.Rows.Add(b.getName(), b.getBalance(), b.getDate());
+				d.Rows.Add(b.getName(), b.getBalance(), b.getDate().Date);
 			}
 			
 			return d;

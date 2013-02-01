@@ -55,6 +55,8 @@ namespace Biller
 			// 
 			this.billDisplay.AllowUserToAddRows = false;
 			this.billDisplay.AllowUserToDeleteRows = false;
+			this.billDisplay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+			this.billDisplay.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
 			this.billDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.billDisplay.Location = new System.Drawing.Point(0, 0);
 			this.billDisplay.Name = "billDisplay";
@@ -63,10 +65,9 @@ namespace Biller
 			// 
 			// ListBills
 			// 
-			//TODO make it so that users can not change the size of the window
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			//this.re
+			this.AutoSize = true;
 			this.ClientSize = new System.Drawing.Size(330, 348);
 			this.Controls.Add(this.billDisplay);
 			this.Controls.Add(this.listBillCancelButton);

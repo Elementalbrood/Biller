@@ -55,9 +55,7 @@ namespace Biller
 
 		void BillToolStripMenuItemClick(object sender, EventArgs e)
 		{
-			//Application.Run(new AddBill());
 			AddBill k = new AddBill();
-			//Console.WriteLine("Added bill");
 			k.ShowDialog();
 		}
 		

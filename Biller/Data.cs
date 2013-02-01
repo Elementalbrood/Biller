@@ -23,10 +23,10 @@ namespace Biller
 		{
 		}
 		
-		public static void AddBillToList(string n, double b)
+		public static void AddBillToList(string n, double b, DateTime d)
 		{
 			
-			_bills.Add(new Bill(n, b));
+			_bills.Add(new Bill(n, b, d));
 			size++;
 			System.Diagnostics.Debug.WriteLine("Current number of bills " + _bills.Count);
 		}

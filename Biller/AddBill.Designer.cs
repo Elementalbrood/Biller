@@ -123,16 +123,17 @@ namespace Biller
 			// 
 			// dateTimePicker
 			// 
+			this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
 			this.dateTimePicker.Location = new System.Drawing.Point(95, 147);
 			this.dateTimePicker.Name = "dateTimePicker";
-			this.dateTimePicker.Size = new System.Drawing.Size(199, 20);
+			this.dateTimePicker.Size = new System.Drawing.Size(103, 20);
 			this.dateTimePicker.TabIndex = 10;
 			// 
-			// AddBill
+			// Form3
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(340, 285);
+			this.ClientSize = new System.Drawing.Size(313, 306);
 			this.Controls.Add(this.dateTimePicker);
 			this.Controls.Add(this.Min);
 			this.Controls.Add(this.label4);
@@ -143,8 +144,7 @@ namespace Biller
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
-			this.Name = "AddBill";
-			this.Text = "AddBill";
+			//this.Name = "Form3";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
