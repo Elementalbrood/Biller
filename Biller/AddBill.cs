@@ -32,16 +32,15 @@ namespace Biller
 		//Add Button
 		void AddClick(object sender, EventArgs e)
 		{
-			Name.SelectAll();
 			string n = Name.Text;
-			
-			Balance.SelectAll();
 			string b = Balance.Text;
 			double bal = 0;
 			
 			Double.TryParse(b, out bal);
 			
-			Data.AddBillToList(n, bal);
+			DateTime date = dateTimePicker.Value;
+			
+			Data.AddBillToList(n, bal, date);
 			
 			System.Diagnostics.Debug.WriteLine("Added bill");
 			

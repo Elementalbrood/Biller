@@ -16,9 +16,7 @@ namespace Biller
 	public class Bill
 	{
 		string name;
-		int month;
-		int day;
-		int year;
+		DateTime date;
 		
 		double balance;
 		
@@ -28,12 +26,11 @@ namespace Biller
 			balance = b;
 		}
 		
-		public Bill(string n, int m, int d, int y)
+		public Bill(string n, double b, DateTime d)
 		{
 			name = n;
-			month = m;
-			day = d;
-			year = y;
+			balance = b;
+			date = d;
 		}
 		
 		public string getName()
@@ -41,9 +38,9 @@ namespace Biller
 			return name;
 		}
 		
-		public string getDate()
+		public DateTime getDate()
 		{
-			return month + "/" + day + "/" + year;
+			return date;
 		}
 		
 		public double getBalance()

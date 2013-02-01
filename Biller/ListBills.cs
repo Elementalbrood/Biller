@@ -32,24 +32,27 @@ namespace Biller
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 			
-			
-			billDisplay.DataSource = getResults();
-			
+			if(Data._bills.Count > 0)
+			{
+				billDisplay.DataSource = getResults();
+			}
+			else
+			{
+				
+			}
 		}
 		
 		private DataTable getResults()
 		{
-			DataTable d = billDisplay.DataSource;
+			DataTable d = new DataTable();
 			
-			while(d.Rows.Count < Data._bills.Count)
-			{
-				d.Rows.Add();
-				System.Diagnostics.Debug.WriteLine("Adding rows");
-			}
+			d.Columns.Add("Bill", typeof(string));
+			d.Columns.Add("Balance", typeof(double));
+			d.Columns.Add("Due", typeof(DateTime));
 			
-			for(int i = 0; i < d.Rows.Count; i++)
+			foreach(Bill b in Data._bills)
 			{
-				d.Rows[i][0] = Data._bills[0].getName();
+				d.Rows.Add(b.getName(), b.getBalance(), b.getDate());
 			}
 			
 			return d;
