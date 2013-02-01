@@ -36,7 +36,9 @@ namespace Biller
 		void Button1Click(object sender, EventArgs e)
 		{
 			amountDueMonth.Clear();
-			amountDueMonth.Paste("" + backgroundstooof(4, 10));
+			amountDueMonth.Text = "" + backgroundstooof(4, 10);
+			
+			
 			
 			//progressBar1.dostuff();
 			progressBar1.PerformStep();

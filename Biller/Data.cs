@@ -7,6 +7,7 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using System.Collections.Generic;
 
 namespace Biller
 {
@@ -15,8 +16,8 @@ namespace Biller
 	/// </summary>
 	public class Data
 	{
-		static Bill [] list = new Bill[100];
-		static int size = 0;
+		public static List<Bill> _bills = new List<Bill>();
+		public static int size = 0;
 		
 		public Data()
 		{
@@ -24,14 +25,16 @@ namespace Biller
 		
 		public static void AddBillToList(string n, double b)
 		{
-			list[size] = new Bill(n,b);
+			
+			_bills.Add(new Bill(n, b));
 			size++;
+			System.Diagnostics.Debug.WriteLine("Current number of bills " + _bills.Count);
 		}
 		
 		public static void AddBillToList(string n, int m, int d, int y)
 		{
-			list[size] = new Bill(n, m, d, y);
-			size++;
+			//list[size] = new Bill(n, m, d, y);
+			//size++;
 		}
 	}
 }

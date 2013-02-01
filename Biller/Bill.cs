@@ -36,6 +36,11 @@ namespace Biller
 			year = y;
 		}
 		
+		public string getName()
+		{
+			return name;
+		}
+		
 		public string getDate()
 		{
 			return month + "/" + day + "/" + year;

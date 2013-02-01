@@ -33,18 +33,19 @@ namespace Biller
 		void AddClick(object sender, EventArgs e)
 		{
 			Name.SelectAll();
-			string n = Name.SelectedText;
+			string n = Name.Text;
 			
 			Balance.SelectAll();
-			string b = Balance.SelectedText;
+			string b = Balance.Text;
 			double bal = 0;
 			
 			Double.TryParse(b, out bal);
 			
+			Data.AddBillToList(n, bal);
 			
-			//Due.Paste();
+			System.Diagnostics.Debug.WriteLine("Added bill");
 			
-			//Data.AddBillToList();
+			this.Close();
 		}
 		
 		//Cancel Button
