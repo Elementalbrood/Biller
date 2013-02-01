@@ -23,24 +23,35 @@ namespace Biller
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
-			
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
 		}
 		
 		//Add Button
+		//TODO: needs a way of recoving from wrong input.
 		void AddClick(object sender, EventArgs e)
 		{
-			string n = Name.Text;
-			string b = Balance.Text;
+			string n = textbox_name.Text;
+			string b = textbox_balance.Text;
+			string m_b = textbox_min.Text;
 			double bal = 0;
+			double min_bal = 0;
 			
-			Double.TryParse(b, out bal);
+			if(!(Double.TryParse(b, out bal) && Double.TryParse(m_b, out min_bal)))
+			{
+				MessageBox.Show("Something went wrong please correct before proceeding");
+				return;
+			}
+			else
+			{
+				if(bal < 0 || min_bal < 0)
+				{
+					MessageBox.Show("Balance and min balance need to positive right???");
+					return;
+				}
+			}
 			
 			DateTime date = dateTimePicker.Value;
 			
-			Data.AddBillToList(n, bal, date);
+			Data.AddBillToList(n, min_bal, bal, date);
 			
 			System.Diagnostics.Debug.WriteLine("Added bill");
 			

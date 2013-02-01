@@ -40,12 +40,13 @@ namespace Biller
 			DataTable d = new DataTable();
 			
 			d.Columns.Add("Bill", typeof(string));
+			d.Columns.Add("Min", typeof(double));
 			d.Columns.Add("Balance", typeof(double));
 			d.Columns.Add("Due", typeof(DateTime));
 			
 			foreach(Bill b in Data._bills)
 			{
-				d.Rows.Add(b.getName(), b.getBalance(), b.getDate().Date);
+				d.Rows.Add(b.getName(), b.getMinBalance(), b.getBalance(), b.getDate().Date);
 			}
 			
 			return d;

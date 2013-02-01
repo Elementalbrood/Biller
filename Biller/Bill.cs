@@ -18,17 +18,13 @@ namespace Biller
 		string name;
 		DateTime date;
 		
+		double min_bal;
 		double balance;
 		
-		public Bill(string n, double b)
+		public Bill(string n, double min_b, double b, DateTime d)
 		{
 			name = n;
-			balance = b;
-		}
-		
-		public Bill(string n, double b, DateTime d)
-		{
-			name = n;
+			min_bal = min_b;
 			balance = b;
 			date = d;
 		}
@@ -41,6 +37,11 @@ namespace Biller
 		public DateTime getDate()
 		{
 			return date;
+		}
+		
+		public double getMinBalance()
+		{
+			return min_bal;
 		}
 		
 		public double getBalance()

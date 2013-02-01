@@ -72,7 +72,7 @@ namespace Biller
 			this.Controls.Add(this.billDisplay);
 			this.Controls.Add(this.listBillCancelButton);
 			this.Name = "ListBills";
-			this.Text = "ListBills";
+			this.Text = "List Bills";
 			((System.ComponentModel.ISupportInitialize)(this.billDisplay)).EndInit();
 			this.ResumeLayout(false);
 		}
