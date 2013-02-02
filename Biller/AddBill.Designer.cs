@@ -82,7 +82,7 @@ namespace Biller
 			// textbox_alance
 			// 
 			this.textbox_balance.Location = new System.Drawing.Point(95, 51);
-			this.textbox_balance.Name = "textbox_alance";
+			this.textbox_balance.Name = "textbox_balance";
 			this.textbox_balance.Size = new System.Drawing.Size(199, 20);
 			this.textbox_balance.TabIndex = 4;
 			// 
