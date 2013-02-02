@@ -27,7 +27,7 @@ namespace Biller
 			InitializeComponent();
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
-			//
+			//Add usb stuuuf login stuff ya
 			
 			textbox_amountDueMonth.Text = "" + getMonthlyBills();
 		}
@@ -94,8 +94,6 @@ namespace Biller
 		
 		void Button1Click(object sender, EventArgs e)
 		{
-			textbox_amountDueMonth.Clear();
-			
 			progressBar1.PerformStep();
 		}
 
