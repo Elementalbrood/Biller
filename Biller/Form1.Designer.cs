@@ -59,12 +59,13 @@ namespace Biller
 			this.billerCalendar = new System.Windows.Forms.MonthCalendar();
 			this.textbox_amountDueByDate = new System.Windows.Forms.TextBox();
 			this.button_refresh = new System.Windows.Forms.Button();
+			this.button_PayABill = new System.Windows.Forms.Button();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(311, 238);
+			this.button1.Location = new System.Drawing.Point(190, 238);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(109, 29);
 			this.button1.TabIndex = 0;
@@ -247,7 +248,7 @@ namespace Biller
 			// 
 			// button_refresh
 			// 
-			this.button_refresh.Location = new System.Drawing.Point(53, 211);
+			this.button_refresh.Location = new System.Drawing.Point(11, 185);
 			this.button_refresh.Name = "button_refresh";
 			this.button_refresh.Size = new System.Drawing.Size(154, 82);
 			this.button_refresh.TabIndex = 19;
@@ -255,11 +256,23 @@ namespace Biller
 			this.button_refresh.UseVisualStyleBackColor = true;
 			this.button_refresh.Click += new System.EventHandler(this.Button_refreshClick);
 			// 
+			// button_PayABill
+			// 
+			this.button_PayABill.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button_PayABill.Location = new System.Drawing.Point(372, 238);
+			this.button_PayABill.Name = "button_PayABill";
+			this.button_PayABill.Size = new System.Drawing.Size(165, 47);
+			this.button_PayABill.TabIndex = 20;
+			this.button_PayABill.Text = "Pay a bill";
+			this.button_PayABill.UseVisualStyleBackColor = true;
+			this.button_PayABill.Click += new System.EventHandler(this.Button_PayABillClick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(555, 433);
+			this.Controls.Add(this.button_PayABill);
 			this.Controls.Add(this.button_refresh);
 			this.Controls.Add(this.textbox_amountDueByDate);
 			this.Controls.Add(this.billerCalendar);
@@ -280,6 +293,7 @@ namespace Biller
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Button button_PayABill;
 		private System.Windows.Forms.Button button_refresh;
 		private System.Windows.Forms.TextBox textbox_amountDueByDate;
 		private System.Windows.Forms.MonthCalendar billerCalendar;

@@ -25,9 +25,9 @@ namespace Biller
 		{
 		}
 		
-		public static void AddBillToList(string n, double min_b, double b, DateTime d)
+		public static void AddBillToList(string n, double min_b, double b, DateTime d, string t_b)
 		{
-			_bills.Add(new Bill(n, min_b, b, d));
+			_bills.Add(new Bill(n, min_b, b, d, t_b));
 			System.Diagnostics.Debug.WriteLine("Current number of bills " + _bills.Count);
 		}
 	}

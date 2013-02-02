@@ -18,6 +18,11 @@ namespace Biller
 	/// </summary>
 	public partial class ListBills : Form
 	{
+		
+		//TODO: Did the whole Yes/No isPaid thing and Sarah brought up, what if I pay it before the due date?
+		//		So need to make it so User can enter whether it has been paid or not. Still thinking of best place
+		//      to do this.
+		
 		public ListBills()
 		{
 			//
@@ -40,13 +45,15 @@ namespace Biller
 			DataTable d = new DataTable();
 			
 			d.Columns.Add("Bill", typeof(string));
+			d.Columns.Add("Type", typeof(string));
 			d.Columns.Add("Min", typeof(double));
 			d.Columns.Add("Balance", typeof(double));
 			d.Columns.Add("Due", typeof(DateTime));
+			d.Columns.Add("Paid", typeof(string));
 			
 			foreach(Bill b in Data._bills)
 			{
-				d.Rows.Add(b.getName(), b.getMinBalance(), b.getBalance(), b.getDate().Date);
+				d.Rows.Add(b.getName(), b.getTypeOfBill(),b.getMinBalance(), b.getBalance(), b.getDate().Date, b.getIsPaid());
 			}
 			
 			return d;

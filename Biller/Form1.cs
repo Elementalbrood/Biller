@@ -125,5 +125,10 @@ namespace Biller
 			textbox_amountDueMonth.Text = "" + getMonthlyBills();
 			textbox_amountDueByDate.Text = "" + getBillsByDate(e.End);
 		}
+		
+		void Button_PayABillClick(object sender, EventArgs e)
+		{
+			//TODO: Open new window and have drop down of bills to select which one you paid?
+		}
 	}
 }
