@@ -86,21 +86,21 @@ namespace Biller
 			this.textbox_balance.Location = new System.Drawing.Point(95, 96);
 			this.textbox_balance.Name = "textbox_balance";
 			this.textbox_balance.Size = new System.Drawing.Size(199, 20);
-			this.textbox_balance.TabIndex = 4;
+			this.textbox_balance.TabIndex = 5;
 			// 
 			// textbox_min
 			// 
 			this.textbox_min.Location = new System.Drawing.Point(95, 143);
 			this.textbox_min.Name = "textbox_min";
 			this.textbox_min.Size = new System.Drawing.Size(197, 20);
-			this.textbox_min.TabIndex = 5;
+			this.textbox_min.TabIndex = 6;
 			// 
 			// label_min_pay
 			// 
 			this.label_min_pay.Location = new System.Drawing.Point(6, 146);
 			this.label_min_pay.Name = "label_min_pay";
 			this.label_min_pay.Size = new System.Drawing.Size(92, 18);
-			this.label_min_pay.TabIndex = 9;
+			this.label_min_pay.TabIndex = 10;
 			this.label_min_pay.Text = "Min Payment:";
 			// 
 			// dateTimePicker
@@ -109,14 +109,14 @@ namespace Biller
 			this.dateTimePicker.Location = new System.Drawing.Point(95, 186);
 			this.dateTimePicker.Name = "dateTimePicker";
 			this.dateTimePicker.Size = new System.Drawing.Size(103, 20);
-			this.dateTimePicker.TabIndex = 6;
+			this.dateTimePicker.TabIndex = 7;
 			// 
 			// button_add
 			// 
 			this.button_add.Location = new System.Drawing.Point(70, 327);
 			this.button_add.Name = "button_add";
 			this.button_add.Size = new System.Drawing.Size(68, 28);
-			this.button_add.TabIndex = 7;
+			this.button_add.TabIndex = 8;
 			this.button_add.Text = "Add";
 			this.button_add.UseVisualStyleBackColor = true;
 			this.button_add.Click += new System.EventHandler(this.AddClick);
@@ -126,7 +126,7 @@ namespace Biller
 			this.button_cancel.Location = new System.Drawing.Point(176, 327);
 			this.button_cancel.Name = "button_cancel";
 			this.button_cancel.Size = new System.Drawing.Size(68, 28);
-			this.button_cancel.TabIndex = 8;
+			this.button_cancel.TabIndex = 9;
 			this.button_cancel.Text = "Cancel";
 			this.button_cancel.UseVisualStyleBackColor = true;
 			this.button_cancel.Click += new System.EventHandler(this.CancelClick);
@@ -137,7 +137,7 @@ namespace Biller
 			this.label1.Location = new System.Drawing.Point(7, 48);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(56, 32);
-			this.label1.TabIndex = 10;
+			this.label1.TabIndex = 11;
 			this.label1.Text = "Type of bill:";
 			// 
 			// combobox_typeOfBill
@@ -149,11 +149,11 @@ namespace Biller
 									"Credit card",
 									"Loan"});
 			this.combobox_typeOfBill.Location = new System.Drawing.Point(95, 48);
-			this.combobox_typeOfBill.MaxDropDownItems = 2;
+			this.combobox_typeOfBill.MaxDropDownItems = 3;
 			this.combobox_typeOfBill.Name = "combobox_typeOfBill";
 			this.combobox_typeOfBill.Size = new System.Drawing.Size(197, 21);
-			this.combobox_typeOfBill.TabIndex = 11;
-			//this.combobox_typeOfBill.Click += new System.EventHandler(this.Combobox_typeOfBillClick);
+			this.combobox_typeOfBill.TabIndex = 4;
+			this.combobox_typeOfBill.SelectedIndexChanged += new System.EventHandler(this.Combobox_typeOfBillClick);
 			// 
 			// AddBill
 			// 

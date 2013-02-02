@@ -52,6 +52,10 @@
       <DependentUpon>AddBill.cs</DependentUpon>
     </Compile>
     <Compile Include="Bill.cs" />
+    <Compile Include="BillPay.cs" />
+    <Compile Include="BillPay.Designer.cs">
+      <DependentUpon>BillPay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data.cs" />
     <Compile Include="Form1.cs" />
     <Compile Include="Form1.Designer.cs">
@@ -67,6 +71,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AddBill.resx">
       <DependentUpon>AddBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BillPay.resx">
+      <DependentUpon>BillPay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

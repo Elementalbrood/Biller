@@ -60,6 +60,7 @@ namespace Biller
 			this.textbox_amountDueByDate = new System.Windows.Forms.TextBox();
 			this.button_refresh = new System.Windows.Forms.Button();
 			this.button_PayABill = new System.Windows.Forms.Button();
+			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -154,7 +155,8 @@ namespace Biller
 			// helpToolStripMenuItem
 			// 
 			this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.stoofToolStripMenuItem});
+									this.stoofToolStripMenuItem,
+									this.aboutToolStripMenuItem});
 			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
 			this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
 			this.helpToolStripMenuItem.Text = "Help";
@@ -162,7 +164,7 @@ namespace Biller
 			// stoofToolStripMenuItem
 			// 
 			this.stoofToolStripMenuItem.Name = "stoofToolStripMenuItem";
-			this.stoofToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+			this.stoofToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.stoofToolStripMenuItem.Text = "Stoof";
 			// 
 			// textbox_amountDueMonth
@@ -267,6 +269,12 @@ namespace Biller
 			this.button_PayABill.UseVisualStyleBackColor = true;
 			this.button_PayABill.Click += new System.EventHandler(this.Button_PayABillClick);
 			// 
+			// aboutToolStripMenuItem
+			// 
+			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.aboutToolStripMenuItem.Text = "About";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,6 +301,7 @@ namespace Biller
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
 		private System.Windows.Forms.Button button_PayABill;
 		private System.Windows.Forms.Button button_refresh;
 		private System.Windows.Forms.TextBox textbox_amountDueByDate;

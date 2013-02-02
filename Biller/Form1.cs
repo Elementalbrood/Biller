@@ -121,7 +121,7 @@ namespace Biller
 		
 		void BillerCalendarDateSelected(object sender, DateRangeEventArgs e)
 		{
-			//TODO: fix later
+			//FIXME: fix later
 			textbox_amountDueMonth.Text = "" + getMonthlyBills();
 			textbox_amountDueByDate.Text = "" + getBillsByDate(e.End);
 		}
@@ -129,6 +129,12 @@ namespace Biller
 		void Button_PayABillClick(object sender, EventArgs e)
 		{
 			//TODO: Open new window and have drop down of bills to select which one you paid?
+			
+			BillPay bp = new BillPay();
+			bp.ShowDialog();
+			
 		}
+		
+		//TODO: Fill out about info so we look a little bit more professional.
 	}
 }

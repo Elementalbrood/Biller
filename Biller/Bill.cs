@@ -19,20 +19,28 @@ namespace Biller
 	public class Bill
 	{
 		string name;
-		DateTime date;
 		string type_bill;
-		bool iPaidYou = false;
+		
+		bool iPaidYou;
 		
 		double min_bal;
 		double balance;
 		
+		DateTime due_date;
+		
+		
+		//TODO: maybe make more classes for bill types
 		public Bill(string n, double min_b, double b, DateTime d, string t_b)
 		{
 			name = n;
+			type_bill = t_b;
+			
+			iPaidYou = false;
+			
 			min_bal = min_b;
 			balance = b;
-			date = d;
-			type_bill = t_b;
+			
+			due_date = d;
 		}
 		
 		public string getName()
@@ -42,7 +50,7 @@ namespace Biller
 		
 		public DateTime getDate()
 		{
-			return date;
+			return due_date;
 		}
 		
 		public double getMinBalance()
@@ -60,11 +68,13 @@ namespace Biller
 			return type_bill;
 		}
 		
-		public string getIsPaid()
+		public bool getIsPaid()
 		{
 			//TODO: Get better logic. I can't logic so early in the morning. Set up Pay a bill button
 			//		so that iPaidYou = false until User changes iPaidYou to true
 			
+			return iPaidYou;
+			/*
 			if(getDate() > DateTime.Today)
 			{
 				iPaidYou = false;
@@ -78,6 +88,7 @@ namespace Biller
 				return "Yes";
 			else
 				return "No";
+			*/
 		}
 			
 	}
