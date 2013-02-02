@@ -49,23 +49,22 @@ namespace Biller
 			this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.stoofToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.amountDueMonth = new System.Windows.Forms.TextBox();
+			this.textbox_amountDueMonth = new System.Windows.Forms.TextBox();
 			this.progressBar1 = new System.Windows.Forms.ProgressBar();
 			this.progressBar2 = new System.Windows.Forms.ProgressBar();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.amountDueWeek = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.billerCalendar = new System.Windows.Forms.MonthCalendar();
-			this.amountDueByDate = new System.Windows.Forms.TextBox();
+			this.textbox_amountDueByDate = new System.Windows.Forms.TextBox();
+			this.button_refresh = new System.Windows.Forms.Button();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(199, 256);
+			this.button1.Location = new System.Drawing.Point(311, 238);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(109, 29);
 			this.button1.TabIndex = 0;
@@ -165,12 +164,13 @@ namespace Biller
 			this.stoofToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
 			this.stoofToolStripMenuItem.Text = "Stoof";
 			// 
-			// amountDueMonth
+			// textbox_amountDueMonth
 			// 
-			this.amountDueMonth.Location = new System.Drawing.Point(184, 34);
-			this.amountDueMonth.Name = "amountDueMonth";
-			this.amountDueMonth.Size = new System.Drawing.Size(115, 20);
-			this.amountDueMonth.TabIndex = 8;
+			this.textbox_amountDueMonth.Location = new System.Drawing.Point(184, 34);
+			this.textbox_amountDueMonth.Name = "textbox_amountDueMonth";
+			this.textbox_amountDueMonth.ReadOnly = true;
+			this.textbox_amountDueMonth.Size = new System.Drawing.Size(115, 20);
+			this.textbox_amountDueMonth.TabIndex = 8;
 			// 
 			// progressBar1
 			// 
@@ -220,27 +220,10 @@ namespace Biller
 			this.label3.Text = "Amount due this month:";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// label4
-			// 
-			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(11, 80);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(165, 20);
-			this.label4.TabIndex = 14;
-			this.label4.Text = "Amount due this week:";
-			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// amountDueWeek
-			// 
-			this.amountDueWeek.Location = new System.Drawing.Point(184, 80);
-			this.amountDueWeek.Name = "amountDueWeek";
-			this.amountDueWeek.Size = new System.Drawing.Size(115, 20);
-			this.amountDueWeek.TabIndex = 15;
-			// 
 			// label5
 			// 
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.Location = new System.Drawing.Point(11, 124);
+			this.label5.Location = new System.Drawing.Point(11, 80);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(159, 34);
 			this.label5.TabIndex = 16;
@@ -252,31 +235,41 @@ namespace Biller
 			this.billerCalendar.Location = new System.Drawing.Point(311, 18);
 			this.billerCalendar.Name = "billerCalendar";
 			this.billerCalendar.TabIndex = 17;
-			this.billerCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.BillerCalendarDateChanged);
+			this.billerCalendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.BillerCalendarDateSelected);
 			// 
-			// amountDueByDate
+			// textbox_amountDueByDate
 			// 
-			this.amountDueByDate.Location = new System.Drawing.Point(184, 132);
-			this.amountDueByDate.Name = "amountDueByDate";
-			this.amountDueByDate.Size = new System.Drawing.Size(115, 20);
-			this.amountDueByDate.TabIndex = 18;
+			this.textbox_amountDueByDate.Location = new System.Drawing.Point(184, 88);
+			this.textbox_amountDueByDate.Name = "textbox_amountDueByDate";
+			this.textbox_amountDueByDate.ReadOnly = true;
+			this.textbox_amountDueByDate.Size = new System.Drawing.Size(115, 20);
+			this.textbox_amountDueByDate.TabIndex = 18;
+			// 
+			// button_refresh
+			// 
+			this.button_refresh.Location = new System.Drawing.Point(53, 211);
+			this.button_refresh.Name = "button_refresh";
+			this.button_refresh.Size = new System.Drawing.Size(154, 82);
+			this.button_refresh.TabIndex = 19;
+			this.button_refresh.Text = "Refresh Stoof";
+			this.button_refresh.UseVisualStyleBackColor = true;
+			this.button_refresh.Click += new System.EventHandler(this.Button_refreshClick);
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(555, 433);
-			this.Controls.Add(this.amountDueByDate);
+			this.Controls.Add(this.button_refresh);
+			this.Controls.Add(this.textbox_amountDueByDate);
 			this.Controls.Add(this.billerCalendar);
 			this.Controls.Add(this.label5);
-			this.Controls.Add(this.amountDueWeek);
-			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.progressBar2);
 			this.Controls.Add(this.progressBar1);
-			this.Controls.Add(this.amountDueMonth);
+			this.Controls.Add(this.textbox_amountDueMonth);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.menuStrip1);
 			this.MainMenuStrip = this.menuStrip1;
@@ -287,11 +280,10 @@ namespace Biller
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
-		private System.Windows.Forms.TextBox amountDueByDate;
+		private System.Windows.Forms.Button button_refresh;
+		private System.Windows.Forms.TextBox textbox_amountDueByDate;
 		private System.Windows.Forms.MonthCalendar billerCalendar;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.TextBox amountDueWeek;
-		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
@@ -309,7 +301,7 @@ namespace Biller
 		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
 		private System.Windows.Forms.MenuStrip menuStrip1;
-		private System.Windows.Forms.TextBox amountDueMonth;
+		private System.Windows.Forms.TextBox textbox_amountDueMonth;
 		private System.Windows.Forms.Button button1;
 	}
 }

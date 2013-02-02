@@ -43,7 +43,7 @@ namespace Biller
 			// 
 			// listBillCancelButton
 			// 
-			this.listBillCancelButton.Location = new System.Drawing.Point(242, 303);
+			this.listBillCancelButton.Location = new System.Drawing.Point(232, 314);
 			this.listBillCancelButton.Name = "listBillCancelButton";
 			this.listBillCancelButton.Size = new System.Drawing.Size(78, 33);
 			this.listBillCancelButton.TabIndex = 3;
@@ -60,6 +60,7 @@ namespace Biller
 			this.billDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.billDisplay.Location = new System.Drawing.Point(0, 0);
 			this.billDisplay.Name = "billDisplay";
+			this.billDisplay.ReadOnly = true;
 			this.billDisplay.Size = new System.Drawing.Size(330, 277);
 			this.billDisplay.TabIndex = 5;
 			// 
@@ -68,9 +69,9 @@ namespace Biller
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
-			this.ClientSize = new System.Drawing.Size(330, 348);
-			this.Controls.Add(this.billDisplay);
+			this.ClientSize = new System.Drawing.Size(330, 357);
 			this.Controls.Add(this.listBillCancelButton);
+			this.Controls.Add(this.billDisplay);
 			this.Name = "ListBills";
 			this.Text = "List Bills";
 			((System.ComponentModel.ISupportInitialize)(this.billDisplay)).EndInit();

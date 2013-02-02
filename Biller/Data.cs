@@ -17,7 +17,6 @@ namespace Biller
 	public class Data
 	{
 		public static List<Bill> _bills = new List<Bill>();
-		public static int size = 0;
 		
 		public Data()
 		{
@@ -25,16 +24,8 @@ namespace Biller
 		
 		public static void AddBillToList(string n, double min_b, double b, DateTime d)
 		{
-			
 			_bills.Add(new Bill(n, min_b, b, d));
-			size++;
 			System.Diagnostics.Debug.WriteLine("Current number of bills " + _bills.Count);
-		}
-		
-		public static void AddBillToList(string n, int m, int d, int y)
-		{
-			//list[size] = new Bill(n, m, d, y);
-			//size++;
 		}
 	}
 }

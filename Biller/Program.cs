@@ -21,11 +21,7 @@ namespace Biller
 		/// </summary>
 		[STAThread]
 		private static void Main(string[] args)
-		{
-			//Bill bob = new Bill("Discover", 1, 31, 2013);
-			
-			//Console.WriteLine(bob.getDate());
-			
+		{			
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new MainForm());

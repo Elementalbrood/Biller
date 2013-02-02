@@ -26,7 +26,6 @@ namespace Biller
 		}
 		
 		//Add Button
-		//TODO: needs a way of recoving from wrong input.
 		void AddClick(object sender, EventArgs e)
 		{
 			string n = textbox_name.Text;
@@ -55,12 +54,15 @@ namespace Biller
 			
 			System.Diagnostics.Debug.WriteLine("Added bill");
 			
+			
+			
 			this.Close();
 		}
 		
 		//Cancel Button
 		void CancelClick(object sender, EventArgs e)
 		{
+			
 			this.Close();
 		}
 	}

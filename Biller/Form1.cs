@@ -13,7 +13,6 @@ using System.Collections.Generic;
 
 namespace Biller
 {
-	
 	/// <summary>
 	/// Description of Form1.
 	/// </summary>
@@ -30,27 +29,74 @@ namespace Biller
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 			
+			textbox_amountDueMonth.Text = "" + getMonthlyBills();
+		}
 		
+		public double getMonthlyBills()
+		{
+			//System.DateTime;
+		
+			double current_month = 0;
+			
+			DateTime current = DateTime.Now;
+			
+			System.Diagnostics.Debug.WriteLine(current);
+			//TODO make less stupid loop
+			foreach(Bill b in Data._bills)
+			{	
+				if(current.Month == b.getDate().Month)
+				{
+					current_month += b.getBalance();
+				}
+			}
+			
+			return current_month;
+		}
+		
+		//TODO: still deciding on what to do about wheatly stuff
+		public double getWeeklyBills()
+		{
+			double current_week = 0;
+			
+			DateTime current = DateTime.Now;
+			
+			System.Diagnostics.Debug.WriteLine(current);
+			//TODO make less stupid loop
+			foreach(Bill b in Data._bills)
+			{	
+				//if(current. == b.getDate().Week)
+				//{
+				//	current_week += b.getBalance();
+				//}
+			}
+			
+			return current_week;
+		}
+		
+		public double getBillsByDate(DateTime e)
+		{
+			double current_due = 0;
+			
+			DateTime current = DateTime.Now;
+			
+			System.Diagnostics.Debug.WriteLine(current);
+			//TODO make less stupid loop
+			foreach(Bill b in Data._bills)
+			{	
+				if(b.getDate().Day <= e.Day && b.getDate().Day >= current.Day)
+				{
+					current_due += b.getBalance();
+				}
+			}
+			
+			return current_due;
 		}
 		
 		void Button1Click(object sender, EventArgs e)
 		{
-			amountDueMonth.Clear();
-			amountDueMonth.Text = "" + backgroundstooof(4, 10);
+			textbox_amountDueMonth.Clear();
 			
-			
-			
-			//progressBar1.dostuff();
 			progressBar1.PerformStep();
-			
-			//monthCalendar1.
-			
-		}
-		
-		
-		public int backgroundstooof(int a, int b)
-		{
-			return a + b;
 		}
 
 		void BillToolStripMenuItemClick(object sender, EventArgs e)
@@ -70,9 +116,16 @@ namespace Biller
 			
 		}
 		
-		void BillerCalendarDateChanged(object sender, DateRangeEventArgs e)
+		void Button_refreshClick(object sender, EventArgs e)
 		{
-			
+			textbox_amountDueMonth.Text = "" + getMonthlyBills();
+		}
+		
+		void BillerCalendarDateSelected(object sender, DateRangeEventArgs e)
+		{
+			//TODO: fix later
+			textbox_amountDueMonth.Text = "" + getMonthlyBills();
+			textbox_amountDueByDate.Text = "" + getBillsByDate(e.End);
 		}
 	}
 }
