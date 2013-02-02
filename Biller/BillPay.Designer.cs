@@ -87,6 +87,7 @@ namespace Biller
 			this.button_pay_me.TabIndex = 3;
 			this.button_pay_me.Text = "PAY ME NOW!!!";
 			this.button_pay_me.UseVisualStyleBackColor = true;
+			this.button_pay_me.Click += new System.EventHandler(this.Button_pay_meClick);
 			// 
 			// label_date_paid
 			// 

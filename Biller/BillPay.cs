@@ -37,6 +37,13 @@ namespace Biller
 			}
 			
 			comboBox_bill.DataSource = list;
+			
+			
+		}
+		
+		void Button_pay_meClick(object sender, EventArgs e)
+		{
+			//TODO: When clicked, bal -= payment; iPaidYou = true; update xp bar on Form1
 		}
 	}
 }

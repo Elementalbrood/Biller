@@ -39,15 +39,15 @@ namespace Biller
 		{
 			string n = textbox_name.Text;
 			string b = textbox_balance.Text;
+			string t_b = combobox_typeOfBill.Text;
 			string m_b = textbox_min.Text;
 			//added 2/2/13 (t_b = type_bill) drop down box
-			string t_b = combobox_typeOfBill.Text;
 			double bal = 0;
 			double min_bal = 0;
 			
-			if(t_b.Equals("Utilities bill"))
+			if(t_b.Contains("Utilities bill"))
 			{
-				min_bal = bal;
+				m_b = b;
 			}	
 			if(!(Double.TryParse(b, out bal) && Double.TryParse(m_b, out min_bal)))
 			{
@@ -55,9 +55,7 @@ namespace Biller
 				return;
 			}
 			else
-			{
-				
-				
+			{				
 				if(bal < 0 || min_bal < 0)
 				{
 					MessageBox.Show("Balance and min balance need to positive right???");
