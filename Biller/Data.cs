@@ -16,6 +16,12 @@ namespace Biller
 	/// </summary>
 	public class Data
 	{
+		public const int OCC_NONE = 0;
+		public const int OCC_MONTHLY = 1;
+		public const int OCC_BIANNUAL = 2;
+		public const int OCC_ANNUAL = 3;
+		
+		
 		public static List<Bill> _bills = new List<Bill>();
 		
 		
@@ -23,11 +29,27 @@ namespace Biller
 		
 		public Data()
 		{
+			//TODO: when loaded check to see if new bills need to be added due
+			// to occurence data.
+			
+			//need to check type of bill, can't just add a bill
+			
+			foreach(Bill b in _bills)
+			{
+				/*
+				if(b.getDate())
+				{
+					//could cause trouble based on the type of bill that needs to be added
+					//_bills.Add(new int)
+				}
+				*/
+			}
+			
 		}
 		
-		public static void AddBillToList(string n, double min_b, double b, DateTime d, string t_b)
+		public static void AddUtilityBillToList(string n, double b, DateTime d, int o)
 		{
-			Bill n_bill = new Bill(n, min_b, b, d, t_b);
+			UtilityBill n_bill = new UtilityBill(n, b, d, o);
 			System.Diagnostics.Debug.WriteLine("n_bill " + n_bill.ToString());
 			_bills.Add(n_bill);
 			System.Diagnostics.Debug.WriteLine("Current number of bills " + _bills.Count);

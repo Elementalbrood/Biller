@@ -18,7 +18,14 @@ namespace Biller
 	
 	public class Bill
 	{
+		//ints are based on frequency
+		//higher frequency -> lower number
+		//except for none
+		
+		int occurance;
+		
 		string name;
+		//TODO: do stuff with type_bill
 		string type_bill;
 		
 		bool iPaidYou;
@@ -30,18 +37,19 @@ namespace Biller
 		DateTime paidOn_date;
 		
 		//TODO: maybe make more classes for bill types
-		public Bill(string n, double min_b, double b, DateTime d, string t_b)
+		public Bill(string n, double b, DateTime d, int o)
 		{
+			occurance = o;
+			
 			name = n;
-			type_bill = t_b;
 			
 			iPaidYou = false;
 			
-			min_bal = min_b;
 			balance = b;
-			
 			due_date = d;
 		}
+		
+		//TODO: when adding credit cards have min_bal set
 		
 		public string getName()
 		{
@@ -53,14 +61,16 @@ namespace Biller
 			return due_date;
 		}
 		
-		public double getMinBalance()
+		public double MinBalance
 		{
-			return min_bal;
+			get{return this.min_bal;}
+			set{this.min_bal = value;}
 		}
 		
-		public double getBalance()
+		public double Balance
 		{
-			return balance;
+			get{return this.balance;}
+			set{this.balance = value;}
 		}
 		
 		public string getTypeOfBill()
@@ -68,9 +78,10 @@ namespace Biller
 			return type_bill;
 		}
 		
-		public bool getIsPaid()
+		public bool Paid
 		{
-			return iPaidYou;
+			get{return this.iPaidYou;}
+			set{this.iPaidYou = value;}
 		}
 		
 		public DateTime getPaidOn()
@@ -81,7 +92,11 @@ namespace Biller
 		
 		public override string ToString()
 		{
-			return getName();
+			string message = "";
+			message += name;
+			message += "-" + "(" + min_bal +")";
+			
+			return message;
 		}
 	}
 }

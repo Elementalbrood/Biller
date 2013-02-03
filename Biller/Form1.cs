@@ -46,7 +46,7 @@ namespace Biller
 			{	
 				if(current.Month == b.getDate().Month)
 				{
-					current_month += b.getBalance();
+					current_month += b.Balance;
 				}
 			}
 			
@@ -85,7 +85,7 @@ namespace Biller
 			{	
 				if(b.getDate().Day <= e.Day && b.getDate().Day >= current.Day)
 				{
-					current_due += b.getBalance();
+					current_due += b.Balance;
 				}
 			}
 			
@@ -99,7 +99,7 @@ namespace Biller
 
 		void BillToolStripMenuItemClick(object sender, EventArgs e)
 		{
-			AddBill k = new AddBill();
+			AddUtilityBill k = new AddUtilityBill();
 			k.ShowDialog();
 		}
 		

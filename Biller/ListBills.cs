@@ -54,7 +54,7 @@ namespace Biller
 			
 			foreach(Bill b in Data._bills)
 			{
-				d.Rows.Add(b.getName(), b.getTypeOfBill(),b.getMinBalance(), b.getBalance(), b.getDate().Date, b.getIsPaid(), b.getPaidOn());
+				d.Rows.Add(b.getName(), b.getTypeOfBill(), b.MinBalance, b.Balance, b.getDate().Date, b.Paid, b.getPaidOn());
 			}
 			
 			return d;

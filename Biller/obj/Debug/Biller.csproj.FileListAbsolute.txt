@@ -16,6 +16,6 @@ C:\Users\Sean Connelly\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\B
 C:\Users\Sean Connelly\Documents\SharpDevelop Projects\Biller\Biller\bin\Debug\Biller.exe
 C:\Users\Sean Connelly\Documents\SharpDevelop Projects\Biller\Biller\bin\Debug\Biller.pdb
 C:\Users\Sean Connelly\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.pdb
-C:\Users\Elemental\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.AddBill.resources
 C:\Users\Elemental\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.BillPay.resources
 C:\Users\Sean Connelly\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.BillPay.resources
+C:\Users\Elemental\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.AddUtilityBill.resources

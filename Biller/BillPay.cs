@@ -23,10 +23,6 @@ namespace Biller
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
-			
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
 
 			int a = 0;
 			Bill [] list = new Bill[Data._bills.Count];
@@ -41,17 +37,34 @@ namespace Biller
 		void Button_pay_meClick(object sender, EventArgs e)
 		{
 			Bill b = (Bill)comboBox_bill.SelectedValue;
-			
-			//double paid_amount = textBox_amount_paid.Text;
+			string s_paid = textBox_amount_paid.Text;
+			double d_paid_amount = 0;
 			DateTime date_paid = dateTimePicker_paid.Value;
 			
-			//TODO: Add error handling/logic
+			//TEST: make sure that all things are correctly account for.
+			if(!Double.TryParse(s_paid, out d_paid_amount))
+			{
+				MessageBox.Show("Please enter an acceptable pay amount");
+			}
+
+			//this can be used to check bill type
+			if(b is UtilityBill)
+			{
+				System.Diagnostics.Debug.WriteLine("Pay me: " + b.getName());
+				b.Balance -= d_paid_amount; 
+			}
+			
+			//may change when a person tries to pay for something with a minbalance
+			// move into the if(b is utilitybill)
+			if(b.Balance <= 0)
+			{
+				b.Paid = true;
+			}
 			
 			//System.Diagnostics.Debug.WriteLine("pay me: " + b.getName());
 			
-			//b.
-			
-			//TODO: When clicked, bal -= payment; iPaidYou = true; update xp bar on Form1
+			//TODO: update the date of when it was paid, update xp bar on Form1
+			this.Close();
 		}
 	}
 }

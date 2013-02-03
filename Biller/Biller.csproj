@@ -47,9 +47,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddBill.cs" />
-    <Compile Include="AddBill.Designer.cs">
-      <DependentUpon>AddBill.cs</DependentUpon>
+    <Compile Include="AddUtilityBill.cs" />
+    <Compile Include="AddUtilityBill.Designer.cs">
+      <DependentUpon>AddUtilityBill.cs</DependentUpon>
     </Compile>
     <Compile Include="Bill.cs" />
     <Compile Include="BillPay.cs" />
@@ -67,10 +67,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UtilityBill.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AddBill.resx">
-      <DependentUpon>AddBill.cs</DependentUpon>
+    <EmbeddedResource Include="AddUtilityBill.resx">
+      <DependentUpon>AddUtilityBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BillPay.resx">
       <DependentUpon>BillPay.cs</DependentUpon>
