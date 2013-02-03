@@ -78,6 +78,10 @@ namespace Biller
 			
 			return paidOn_date;
 		}
-			
+		
+		public override string ToString()
+		{
+			return getName();
+		}
 	}
 }

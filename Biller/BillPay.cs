@@ -28,14 +28,23 @@ namespace Biller
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 			
-			int a =0;
+			/*
+			int a = 0;
 			string [] list = new string[Data._bills.Count];
 			foreach(Bill b in Data._bills)
 			{
 				list[a] = b.getName();
 				a++;
 			}
+			*/
 			
+			int a = 0;
+			Bill [] list = new Bill[Data._bills.Count];
+			foreach(Bill b in Data._bills)
+			{
+				list[a] = b;
+				a++;
+			}
 			comboBox_bill.DataSource = list;
 			
 			
@@ -43,6 +52,14 @@ namespace Biller
 		
 		void Button_pay_meClick(object sender, EventArgs e)
 		{
+			/*
+			string name = comboBox_bill.Text;
+			double paid_amount = textBox_amount_paid;
+			DateTime date_paid = dateTimePicker_paid;
+			*/
+			
+			
+			
 			//TODO: When clicked, bal -= payment; iPaidYou = true; update xp bar on Form1
 		}
 	}
