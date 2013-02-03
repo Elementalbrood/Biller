@@ -27,7 +27,7 @@ namespace Biller
 		double balance;
 		
 		DateTime due_date;
-		
+		DateTime paidOn_date;
 		
 		//TODO: maybe make more classes for bill types
 		public Bill(string n, double min_b, double b, DateTime d, string t_b)
@@ -70,25 +70,13 @@ namespace Biller
 		
 		public bool getIsPaid()
 		{
-			//TODO: Get better logic. I can't logic so early in the morning. Set up Pay a bill button
-			//		so that iPaidYou = false until User changes iPaidYou to true
-			
 			return iPaidYou;
-			/*
-			if(getDate() > DateTime.Today)
-			{
-				iPaidYou = false;
-			}
-			if(getDate() <= DateTime.Today)
-			{
-				iPaidYou = true;
-			}
+		}
+		
+		public DateTime getPaidOn()
+		{
 			
-			if(iPaidYou)
-				return "Yes";
-			else
-				return "No";
-			*/
+			return paidOn_date;
 		}
 			
 	}

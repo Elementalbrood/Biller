@@ -50,10 +50,11 @@ namespace Biller
 			d.Columns.Add("Balance", typeof(double));
 			d.Columns.Add("Due", typeof(DateTime));
 			d.Columns.Add("Paid", typeof(string));
+			d.Columns.Add("Date Paid", typeof(DateTime));
 			
 			foreach(Bill b in Data._bills)
 			{
-				d.Rows.Add(b.getName(), b.getTypeOfBill(),b.getMinBalance(), b.getBalance(), b.getDate().Date, b.getIsPaid());
+				d.Rows.Add(b.getName(), b.getTypeOfBill(),b.getMinBalance(), b.getBalance(), b.getDate().Date, b.getIsPaid()), b.getPaidOn();
 			}
 			
 			return d;
