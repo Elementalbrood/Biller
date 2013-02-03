@@ -45,10 +45,12 @@ namespace Biller
 			this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.stuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.billToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.stoofToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.textbox_amountDueMonth = new System.Windows.Forms.TextBox();
 			this.progressBar1 = new System.Windows.Forms.ProgressBar();
 			this.progressBar2 = new System.Windows.Forms.ProgressBar();
@@ -60,7 +62,7 @@ namespace Biller
 			this.textbox_amountDueByDate = new System.Windows.Forms.TextBox();
 			this.button_refresh = new System.Windows.Forms.Button();
 			this.button_PayABill = new System.Windows.Forms.Button();
-			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.otherBillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -101,41 +103,51 @@ namespace Biller
 			// newBillToolStripMenuItem
 			// 
 			this.newBillToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.billToolStripMenuItem});
+									this.billToolStripMenuItem,
+									this.otherBillToolStripMenuItem});
 			this.newBillToolStripMenuItem.Name = "newBillToolStripMenuItem";
-			this.newBillToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+			this.newBillToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.newBillToolStripMenuItem.Text = "New";
 			// 
 			// billToolStripMenuItem
 			// 
 			this.billToolStripMenuItem.Name = "billToolStripMenuItem";
-			this.billToolStripMenuItem.Size = new System.Drawing.Size(90, 22);
-			this.billToolStripMenuItem.Text = "Bill";
+			this.billToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.billToolStripMenuItem.Text = "Utility Bill";
 			this.billToolStripMenuItem.Click += new System.EventHandler(this.BillToolStripMenuItemClick);
 			// 
 			// saveToolStripMenuItem
 			// 
 			this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-			this.saveToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+			this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.saveToolStripMenuItem.Text = "Save";
 			// 
 			// infoToolStripMenuItem
 			// 
 			this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-			this.infoToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+			this.infoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.infoToolStripMenuItem.Text = "Info";
 			// 
 			// stuffToolStripMenuItem
 			// 
 			this.stuffToolStripMenuItem.Name = "stuffToolStripMenuItem";
-			this.stuffToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+			this.stuffToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.stuffToolStripMenuItem.Text = "Stuff";
 			// 
 			// editToolStripMenuItem
 			// 
+			this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+									this.billToolStripMenuItem1});
 			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
 			this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
 			this.editToolStripMenuItem.Text = "Edit";
+			// 
+			// billToolStripMenuItem1
+			// 
+			this.billToolStripMenuItem1.Name = "billToolStripMenuItem1";
+			this.billToolStripMenuItem1.Size = new System.Drawing.Size(90, 22);
+			this.billToolStripMenuItem1.Text = "Bill";
+			this.billToolStripMenuItem1.Click += new System.EventHandler(this.EditBillClick);
 			// 
 			// viewToolStripMenuItem
 			// 
@@ -164,8 +176,14 @@ namespace Biller
 			// stoofToolStripMenuItem
 			// 
 			this.stoofToolStripMenuItem.Name = "stoofToolStripMenuItem";
-			this.stoofToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.stoofToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
 			this.stoofToolStripMenuItem.Text = "Stoof";
+			// 
+			// aboutToolStripMenuItem
+			// 
+			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+			this.aboutToolStripMenuItem.Text = "About";
 			// 
 			// textbox_amountDueMonth
 			// 
@@ -269,11 +287,11 @@ namespace Biller
 			this.button_PayABill.UseVisualStyleBackColor = true;
 			this.button_PayABill.Click += new System.EventHandler(this.Button_PayABillClick);
 			// 
-			// aboutToolStripMenuItem
+			// otherBillToolStripMenuItem
 			// 
-			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.aboutToolStripMenuItem.Text = "About";
+			this.otherBillToolStripMenuItem.Name = "otherBillToolStripMenuItem";
+			this.otherBillToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.otherBillToolStripMenuItem.Text = "Other Bill";
 			// 
 			// MainForm
 			// 
@@ -301,6 +319,8 @@ namespace Biller
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.ToolStripMenuItem otherBillToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem billToolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
 		private System.Windows.Forms.Button button_PayABill;
 		private System.Windows.Forms.Button button_refresh;

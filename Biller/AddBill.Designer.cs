@@ -46,8 +46,12 @@ namespace Biller
 			this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
 			this.button_add = new System.Windows.Forms.Button();
 			this.button_cancel = new System.Windows.Forms.Button();
-			this.label1 = new System.Windows.Forms.Label();
+			this.radioButton1 = new System.Windows.Forms.RadioButton();
+			this.radioButton2 = new System.Windows.Forms.RadioButton();
+			this.radioButton3 = new System.Windows.Forms.RadioButton();
+			this.radioButton4 = new System.Windows.Forms.RadioButton();
 			this.combobox_typeOfBill = new System.Windows.Forms.ComboBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// label_name
@@ -131,14 +135,49 @@ namespace Biller
 			this.button_cancel.UseVisualStyleBackColor = true;
 			this.button_cancel.Click += new System.EventHandler(this.CancelClick);
 			// 
-			// label1
+			// radioButton1
 			// 
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(7, 48);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(56, 32);
-			this.label1.TabIndex = 11;
-			this.label1.Text = "Type of bill:";
+			this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+			this.radioButton1.Location = new System.Drawing.Point(34, 230);
+			this.radioButton1.Name = "radioButton1";
+			this.radioButton1.Size = new System.Drawing.Size(77, 24);
+			this.radioButton1.TabIndex = 12;
+			this.radioButton1.TabStop = true;
+			this.radioButton1.Text = "Monthly";
+			this.radioButton1.UseVisualStyleBackColor = true;
+			// 
+			// radioButton2
+			// 
+			this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+			this.radioButton2.Location = new System.Drawing.Point(159, 230);
+			this.radioButton2.Name = "radioButton2";
+			this.radioButton2.Size = new System.Drawing.Size(104, 24);
+			this.radioButton2.TabIndex = 13;
+			this.radioButton2.TabStop = true;
+			this.radioButton2.Text = "Biannually";
+			this.radioButton2.UseVisualStyleBackColor = true;
+			// 
+			// radioButton3
+			// 
+			this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+			this.radioButton3.Location = new System.Drawing.Point(34, 273);
+			this.radioButton3.Name = "radioButton3";
+			this.radioButton3.Size = new System.Drawing.Size(104, 24);
+			this.radioButton3.TabIndex = 14;
+			this.radioButton3.TabStop = true;
+			this.radioButton3.Text = "Yearly";
+			this.radioButton3.UseVisualStyleBackColor = true;
+			// 
+			// radioButton4
+			// 
+			this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+			this.radioButton4.Location = new System.Drawing.Point(159, 273);
+			this.radioButton4.Name = "radioButton4";
+			this.radioButton4.Size = new System.Drawing.Size(104, 24);
+			this.radioButton4.TabIndex = 15;
+			this.radioButton4.TabStop = true;
+			this.radioButton4.Text = "radioButton4";
+			this.radioButton4.UseVisualStyleBackColor = true;
 			// 
 			// combobox_typeOfBill
 			// 
@@ -155,11 +194,24 @@ namespace Biller
 			this.combobox_typeOfBill.TabIndex = 4;
 			this.combobox_typeOfBill.SelectedIndexChanged += new System.EventHandler(this.Combobox_typeOfBillClick);
 			// 
+			// label1
+			// 
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(7, 48);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(56, 32);
+			this.label1.TabIndex = 11;
+			this.label1.Text = "Type of bill:";
+			// 
 			// AddBill
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(323, 377);
+			this.Controls.Add(this.radioButton4);
+			this.Controls.Add(this.radioButton3);
+			this.Controls.Add(this.radioButton2);
+			this.Controls.Add(this.radioButton1);
 			this.Controls.Add(this.combobox_typeOfBill);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.dateTimePicker);
@@ -178,8 +230,12 @@ namespace Biller
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
-		private System.Windows.Forms.ComboBox combobox_typeOfBill;
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.ComboBox combobox_typeOfBill;
+		private System.Windows.Forms.RadioButton radioButton4;
+		private System.Windows.Forms.RadioButton radioButton3;
+		private System.Windows.Forms.RadioButton radioButton2;
+		private System.Windows.Forms.RadioButton radioButton1;
 		private System.Windows.Forms.DateTimePicker dateTimePicker;
 		private System.Windows.Forms.Label label_min_pay;
 		private System.Windows.Forms.TextBox textbox_name;

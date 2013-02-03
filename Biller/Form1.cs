@@ -136,5 +136,12 @@ namespace Biller
 		}
 		
 		//TODO: Fill out about info so we look a little bit more professional.
+
+		//For editing existing bills
+		//needs to probably create a new form for selecting and stuff
+		void EditBillClick(object sender, EventArgs e)
+		{
+			
+		}
 	}
 }
