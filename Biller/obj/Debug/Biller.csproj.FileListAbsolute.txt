@@ -45,3 +45,5 @@ C:\Users\Elemental\Documents\GitHub\Biller\Biller\obj\Debug\GenerateResource.rea
 C:\Users\Elemental\Documents\GitHub\Biller\Biller\obj\Debug\GenerateResource.write.1.tlog
 C:\Users\Elemental\Documents\GitHub\Biller\Biller\obj\Debug\Biller.exe
 C:\Users\Elemental\Documents\GitHub\Biller\Biller\obj\Debug\Biller.pdb
+C:\Users\Elemental\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.About.resources
+C:\Users\Elemental\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.EditBill.resources

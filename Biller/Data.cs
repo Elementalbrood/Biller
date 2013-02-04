@@ -43,11 +43,25 @@ namespace Biller
 			_bills.Add(n_bill);
 			System.Diagnostics.Debug.WriteLine("Current number of bills " + _bills.Count);
 		}
+
+		private static Bill getBillByDate(DateTime date)
+		{
+			Bill bi = null;
+			foreach(Bill b in _bills)
+			{
+				if(b.DueDate.CompareTo(date) == 0)
+				{
+					bi = b;
+					break;
+				}
+			}
+			return bi;
+		}
 		
 		public static void updateOccurences()
 		{
 			int abdul = _bills.Count;
-			
+			//FIXME: needs to check to see if there is a bill already in the list. possibily improve
 			for(int i = 0; i < abdul; i++)
 			{
 				Bill b = _bills[i];
@@ -57,22 +71,33 @@ namespace Biller
 					if(DateTime.Now.CompareTo(b.DueDate) > 0)
 					{
 						System.Diagnostics.Debug.WriteLine("CompareTo > 0");
+						
+						DateTime date;
+						
 						if(b.getOccurence() == OCC_MONTHLY)
 						{
-							AddUtilityBillToList(b.Name, b.Balance, b.DueDate.AddMonths(1), b.getOccurence());
+							date = b.DueDate.AddMonths(1);
 						}
-						if(b.getOccurence() == OCC_BIANNUAL)
+						else if(b.getOccurence() == OCC_BIANNUAL)
 						{
-							AddUtilityBillToList(b.Name, b.Balance, b.DueDate.AddMonths(6), b.getOccurence());
+							date = b.DueDate.AddMonths(6);
 						}
-						if(b.getOccurence() == OCC_ANNUAL)
+						else if(b.getOccurence() == OCC_ANNUAL)
 						{
-							AddUtilityBillToList(b.Name, b.Balance, b.DueDate.AddYears(1), b.getOccurence());
+							date = b.DueDate.AddYears(1);
+						}
+						else 
+						{
+							date = DateTime.Now;
+						}
+						
+						if(!_bills.Contains(getBillByDate(date)))
+						{
+							AddUtilityBillToList(b.Name, b.Balance, date, b.getOccurence());
 						}
 					}
 				}
 			}
-			
 		}
 	}
 }

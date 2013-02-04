@@ -60,9 +60,9 @@ namespace Biller
 			if(b.Balance <= 0)
 			{
 				b.Paid = true;
-				b.PaidOn = DateTime.Today;
 			}
-		
+			b.PaidOn = DateTime.Today;
+			
 			//TODO: UTILITIES: update the date of when it was paid, update xp bar on Form1
 			this.Close();
 		}

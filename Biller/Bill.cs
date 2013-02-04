@@ -13,9 +13,7 @@ namespace Biller
 	/// <summary>
 	/// Description of Bill.
 	/// </summary>
-	
-	//TODO: UTILITIES: Make bills recurring. Check to see if day is 1st day in month and re-add bills to list?
-	
+
 	public class Bill
 	{
 		//ints are based on frequency
@@ -50,7 +48,6 @@ namespace Biller
 		}
 		
 		//TODO when adding credit cards have min_bal set
-		
 		public string Name
 		{
 			get{return this.name;}
