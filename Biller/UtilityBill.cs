@@ -23,7 +23,7 @@ namespace Biller
 		public override string ToString()
 		{
 			string message = "";
-			message += getName();
+			message += Name;
 			message += "-" + "(" + this.Balance +")";
 			return message;
 		}

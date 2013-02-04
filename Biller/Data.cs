@@ -25,11 +25,11 @@ namespace Biller
 		public static List<Bill> _bills = new List<Bill>();
 		
 		
-		//TODO: save information, and load information during closing and opening respectively
+		//TODO: UTILITIES: save information, and load information during closing and opening respectively
 		
 		public Data()
 		{
-			//TODO: when loaded check to see if new bills need to be added due
+			//TODO: UTILITIES: when loaded check to see if new bills need to be added due
 			// to occurence data.
 			
 			//need to check type of bill, can't just add a bill

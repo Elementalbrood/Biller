@@ -50,7 +50,7 @@ namespace Biller
 			//this can be used to check bill type
 			if(b is UtilityBill)
 			{
-				System.Diagnostics.Debug.WriteLine("Pay me: " + b.getName());
+				System.Diagnostics.Debug.WriteLine("Pay me: " + b.Name);
 				b.Balance -= d_paid_amount; 
 			}
 			
@@ -63,7 +63,7 @@ namespace Biller
 			
 			//System.Diagnostics.Debug.WriteLine("pay me: " + b.getName());
 			
-			//TODO: update the date of when it was paid, update xp bar on Form1
+			//TODO: UTILITIES: update the date of when it was paid, update xp bar on Form1
 			this.Close();
 		}
 	}

@@ -14,7 +14,7 @@ namespace Biller
 	/// Description of Bill.
 	/// </summary>
 	
-	//TODO: Make bills recurring. Check to see if day is 1st day in month and re-add bills to list?
+	//TODO: UTILITIES: Make bills recurring. Check to see if day is 1st day in month and re-add bills to list?
 	
 	public class Bill
 	{
@@ -49,16 +49,18 @@ namespace Biller
 			due_date = d;
 		}
 		
-		//TODO: when adding credit cards have min_bal set
+		//TODO when adding credit cards have min_bal set
 		
-		public string getName()
+		public string Name
 		{
-			return name;
+			get{return this.name;}
+			set{this.name = value;}
 		}
 		
-		public DateTime getDate()
+		public DateTime Date
 		{
-			return due_date;
+			get{return this.due_date;}
+			set{this.due_date = value;}
 		}
 		
 		public double MinBalance
@@ -73,9 +75,10 @@ namespace Biller
 			set{this.balance = value;}
 		}
 		
-		public string getTypeOfBill()
+		public string TypeOfBill
 		{
-			return type_bill;
+			get{return this.type_bill;}
+			set{this.type_bill = value;}
 		}
 		
 		public bool Paid
@@ -84,10 +87,10 @@ namespace Biller
 			set{this.iPaidYou = value;}
 		}
 		
-		public DateTime getPaidOn()
+		public DateTime PaidOn
 		{
-			
-			return paidOn_date;
+			get{return this.paidOn_date;}
+			set{this.paidOn_date = value;}
 		}
 		
 		public override string ToString()

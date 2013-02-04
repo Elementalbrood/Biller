@@ -30,14 +30,10 @@ namespace Biller
 			//
 			InitializeComponent();
 			
-			if(Data._bills.Count > 0)
-			{
-				billDisplay.DataSource = getResults();
-			}
-			else
-			{
-				//TODO would be cool if it would say something if you didn't have any bills
-			}
+			
+			billDisplay.DataSource = getResults();
+			
+			
 		}
 		
 		private DataTable getResults()
@@ -54,7 +50,7 @@ namespace Biller
 			
 			foreach(Bill b in Data._bills)
 			{
-				d.Rows.Add(b.getName(), b.getTypeOfBill(), b.MinBalance, b.Balance, b.getDate().Date, b.Paid, b.getPaidOn());
+				d.Rows.Add(b.Name, b.TypeOfBill, b.MinBalance, b.Balance, b.Date.Date, b.Paid, b.PaidOn);
 			}
 			
 			return d;

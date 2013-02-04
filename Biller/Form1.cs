@@ -25,8 +25,6 @@ namespace Biller
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
 			//Add usb stuuuf login stuff ya
 			
 			textbox_amountDueMonth.Text = "" + getMonthlyBills();
@@ -41,10 +39,10 @@ namespace Biller
 			DateTime current = DateTime.Now;
 			
 			System.Diagnostics.Debug.WriteLine(current);
-			//TODO make less stupid loop
+			
 			foreach(Bill b in Data._bills)
 			{	
-				if(current.Month == b.getDate().Month)
+				if(current.Month == b.Date.Month)
 				{
 					current_month += b.Balance;
 				}
@@ -53,7 +51,7 @@ namespace Biller
 			return current_month;
 		}
 		
-		//TODO: still deciding on what to do about wheatly stuff
+		//TODO still deciding on what to do about wheatly stuff
 		public double getWeeklyBills()
 		{
 			double current_week = 0;
@@ -61,7 +59,8 @@ namespace Biller
 			DateTime current = DateTime.Now;
 			
 			System.Diagnostics.Debug.WriteLine(current);
-			//TODO make less stupid loop
+			
+			//TODO: NEED?: make less stupid loop
 			foreach(Bill b in Data._bills)
 			{	
 				//if(current. == b.getDate().Week)
@@ -80,10 +79,11 @@ namespace Biller
 			DateTime current = DateTime.Now;
 			
 			System.Diagnostics.Debug.WriteLine(current);
-			//TODO make less stupid loop
+			
+			//TODO: UTILITIES: make less stupid loop
 			foreach(Bill b in Data._bills)
 			{	
-				if(b.getDate().Day <= e.Day && b.getDate().Day >= current.Day)
+				if(b.Date.Day <= e.Day && b.Date.Day >= current.Day)
 				{
 					current_due += b.Balance;
 				}
@@ -106,7 +106,14 @@ namespace Biller
 		void Bill_List_Click(object sender, EventArgs e)
 		{
 			ListBills b = new ListBills();
-			b.ShowDialog();
+			if(Data._bills.Count > 0)
+			{
+				b.ShowDialog();
+			}
+			else
+			{
+				MessageBox.Show("CONGRATULATIONS! YOU DON'T HAVE ANY BILLS! Power Level = 9001");
+			}
 		}
 		
 		void ProgressBar1Click(object sender, EventArgs e)
@@ -127,15 +134,12 @@ namespace Biller
 		}
 		
 		void Button_PayABillClick(object sender, EventArgs e)
-		{
-			//TODO: Open new window and have drop down of bills to select which one you paid?
-			
+		{			
 			BillPay bp = new BillPay();
 			bp.ShowDialog();
-			
 		}
 		
-		//TODO: Fill out about info so we look a little bit more professional.
+		//TODO: UTILITIES: Fill out about info so we look a little bit more professional.
 
 		//For editing existing bills
 		//needs to probably create a new form for selecting and stuff

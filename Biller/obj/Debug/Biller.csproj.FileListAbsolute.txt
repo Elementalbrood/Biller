@@ -8,7 +8,6 @@ C:\Users\Elemental\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Gener
 C:\Users\Elemental\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\GenerateResource.write.1.tlog
 C:\Users\Elemental\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.ListBills.resources
 C:\Users\Sean Connelly\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.csprojResolveAssemblyReference.cache
-C:\Users\Sean Connelly\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.AddBill.resources
 C:\Users\Sean Connelly\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.MainForm.resources
 C:\Users\Sean Connelly\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.ListBills.resources
 C:\Users\Sean Connelly\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.csproj.GenerateResource.Cache
@@ -19,3 +18,4 @@ C:\Users\Sean Connelly\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\B
 C:\Users\Elemental\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.BillPay.resources
 C:\Users\Sean Connelly\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.BillPay.resources
 C:\Users\Elemental\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.AddUtilityBill.resources
+C:\Users\Sean Connelly\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.AddUtilityBill.resources

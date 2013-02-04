@@ -23,13 +23,6 @@ namespace Biller
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
-
-			/*
-			if(combobox_typeOfBill.Text.Equals("Utility"))
-			{
-				textbox_min.Enabled(false);
-			}
-			*/
 		}
 		
 		//Add Button
@@ -79,7 +72,7 @@ namespace Biller
 			//if occ was not selected
 			if(occ == -1)
 			{
-				MessageBox.Show("An occurence was not selected, please select and try again");
+				MessageBox.Show("An occurence was not selected. Please select an occurence and try again");
 			}
 			
 			Data.AddUtilityBillToList(n, bal, date, occ);
