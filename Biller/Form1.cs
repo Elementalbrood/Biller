@@ -20,7 +20,6 @@ namespace Biller
 	{
 		public MainForm()
 		{
-			
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
@@ -28,6 +27,17 @@ namespace Biller
 			//Add usb stuuuf login stuff ya
 			
 			textbox_amountDueMonth.Text = "" + getMonthlyBills();
+			
+			/*
+			DateTime currentDate = DateTime.Today;
+			DateTime notCurrent = DateTime.Today.AddMonths(6);
+			
+			System.Diagnostics.Debug.WriteLine("CurrentDate = {0} notCurrent = {1}", currentDate, notCurrent);
+			System.Diagnostics.Debug.WriteLine("CurrentDate == notCurrent : {0}", currentDate == notCurrent);
+			System.Diagnostics.Debug.WriteLine("CurrentDate < notCurrent : {0}", currentDate < notCurrent);
+			System.Diagnostics.Debug.WriteLine("CurrentDate > notCurrent : {0}", currentDate > notCurrent);
+			*/
+			
 		}
 		
 		public double getMonthlyBills()
@@ -42,7 +52,7 @@ namespace Biller
 			
 			foreach(Bill b in Data._bills)
 			{	
-				if(current.Month == b.Date.Month)
+				if(current.Month == b.DueDate.Month)
 				{
 					current_month += b.Balance;
 				}
@@ -83,7 +93,7 @@ namespace Biller
 			//TODO: UTILITIES: make less stupid loop
 			foreach(Bill b in Data._bills)
 			{	
-				if(b.Date.Day <= e.Day && b.Date.Day >= current.Day)
+				if(b.DueDate.Day <= e.Day && b.DueDate.Day >= current.Day)
 				{
 					current_due += b.Balance;
 				}

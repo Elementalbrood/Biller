@@ -39,6 +39,7 @@ namespace Biller
 		private DataTable getResults()
 		{
 			DataTable d = new DataTable();
+			Data.updateOccurences();
 			
 			d.Columns.Add("Bill", typeof(string));
 			d.Columns.Add("Type", typeof(string));
@@ -47,10 +48,9 @@ namespace Biller
 			d.Columns.Add("Due", typeof(DateTime));
 			d.Columns.Add("Paid", typeof(string));
 			d.Columns.Add("Date Paid", typeof(DateTime));
-			
 			foreach(Bill b in Data._bills)
 			{
-				d.Rows.Add(b.Name, b.TypeOfBill, b.MinBalance, b.Balance, b.Date.Date, b.Paid, b.PaidOn);
+				d.Rows.Add(b.Name, b.TypeOfBill, b.MinBalance, b.Balance, b.DueDate.Date, b.Paid, b.PaidOn);
 			}
 			
 			return d;

@@ -57,7 +57,7 @@ namespace Biller
 			set{this.name = value;}
 		}
 		
-		public DateTime Date
+		public DateTime DueDate
 		{
 			get{return this.due_date;}
 			set{this.due_date = value;}
