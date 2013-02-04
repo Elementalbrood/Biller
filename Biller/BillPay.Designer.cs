@@ -47,6 +47,7 @@ namespace Biller
 			// 
 			// comboBox_bill
 			// 
+			this.comboBox_bill.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
 			this.comboBox_bill.FormattingEnabled = true;
 			this.comboBox_bill.Location = new System.Drawing.Point(120, 23);
 			this.comboBox_bill.Name = "comboBox_bill";

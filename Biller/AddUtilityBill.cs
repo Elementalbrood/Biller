@@ -79,6 +79,8 @@ namespace Biller
 			
 			System.Diagnostics.Debug.WriteLine("Added bill");
 			
+			//textbox_name.AutoCompleteCustomSource.Add(n);
+			
 			this.Close();
 		}
 		
@@ -88,6 +90,5 @@ namespace Biller
 			
 			this.Close();
 		}
-
 	}
 }

@@ -93,6 +93,11 @@ namespace Biller
 			set{this.paidOn_date = value;}
 		}
 		
+		public int getOccurence()
+		{
+			return occurance;
+		}
+		
 		public override string ToString()
 		{
 			string message = "";

@@ -96,12 +96,6 @@ namespace Biller
 		{
 			progressBar1.PerformStep();
 		}
-
-		void BillToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			AddUtilityBill k = new AddUtilityBill();
-			k.ShowDialog();
-		}
 		
 		void Bill_List_Click(object sender, EventArgs e)
 		{
@@ -139,13 +133,25 @@ namespace Biller
 			bp.ShowDialog();
 		}
 		
-		//TODO: UTILITIES: Fill out about info so we look a little bit more professional.
 
 		//For editing existing bills
 		//needs to probably create a new form for selecting and stuff
 		void EditBillClick(object sender, EventArgs e)
 		{
-			
+			EditBill ed = new EditBill();
+			ed.ShowDialog();
+		}
+		
+		void BillToolStripMenuItem_newUtilityBillClick(object sender, EventArgs e)
+		{
+			AddUtilityBill k = new AddUtilityBill();
+			k.ShowDialog();
+		}
+		
+		void AboutToolStripMenuItem_aboutClick(object sender, EventArgs e)
+		{
+			About a = new About();
+			a.ShowDialog();
 		}
 	}
 }

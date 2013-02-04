@@ -32,6 +32,7 @@ namespace Biller
 				a++;
 			}
 			comboBox_bill.DataSource = list;
+			//comboBox_bill.AutoCompleteSource = list;
 		}
 		
 		void Button_pay_meClick(object sender, EventArgs e)
@@ -59,10 +60,9 @@ namespace Biller
 			if(b.Balance <= 0)
 			{
 				b.Paid = true;
+				b.PaidOn = DateTime.Today;
 			}
-			
-			//System.Diagnostics.Debug.WriteLine("pay me: " + b.getName());
-			
+		
 			//TODO: UTILITIES: update the date of when it was paid, update xp bar on Form1
 			this.Close();
 		}

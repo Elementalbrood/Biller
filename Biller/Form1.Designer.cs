@@ -40,7 +40,8 @@ namespace Biller
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.newBillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.billToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.billToolStripMenuItemClick_newUtilityBill = new System.Windows.Forms.ToolStripMenuItem();
+			this.otherBillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.stuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,7 +51,7 @@ namespace Biller
 			this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.stoofToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.aboutToolStripMenuItem_about = new System.Windows.Forms.ToolStripMenuItem();
 			this.textbox_amountDueMonth = new System.Windows.Forms.TextBox();
 			this.progressBar1 = new System.Windows.Forms.ProgressBar();
 			this.progressBar2 = new System.Windows.Forms.ProgressBar();
@@ -62,7 +63,6 @@ namespace Biller
 			this.textbox_amountDueByDate = new System.Windows.Forms.TextBox();
 			this.button_refresh = new System.Windows.Forms.Button();
 			this.button_PayABill = new System.Windows.Forms.Button();
-			this.otherBillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -103,18 +103,24 @@ namespace Biller
 			// newBillToolStripMenuItem
 			// 
 			this.newBillToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.billToolStripMenuItem,
+									this.billToolStripMenuItemClick_newUtilityBill,
 									this.otherBillToolStripMenuItem});
 			this.newBillToolStripMenuItem.Name = "newBillToolStripMenuItem";
 			this.newBillToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.newBillToolStripMenuItem.Text = "New";
 			// 
-			// billToolStripMenuItem
+			// billToolStripMenuItemClick_newUtilityBill
 			// 
-			this.billToolStripMenuItem.Name = "billToolStripMenuItem";
-			this.billToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.billToolStripMenuItem.Text = "Utility Bill";
-			this.billToolStripMenuItem.Click += new System.EventHandler(this.BillToolStripMenuItemClick);
+			this.billToolStripMenuItemClick_newUtilityBill.Name = "billToolStripMenuItemClick_newUtilityBill";
+			this.billToolStripMenuItemClick_newUtilityBill.Size = new System.Drawing.Size(152, 22);
+			this.billToolStripMenuItemClick_newUtilityBill.Text = "Utility Bill";
+			this.billToolStripMenuItemClick_newUtilityBill.Click += new System.EventHandler(this.BillToolStripMenuItem_newUtilityBillClick);
+			// 
+			// otherBillToolStripMenuItem
+			// 
+			this.otherBillToolStripMenuItem.Name = "otherBillToolStripMenuItem";
+			this.otherBillToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.otherBillToolStripMenuItem.Text = "Other Bill";
 			// 
 			// saveToolStripMenuItem
 			// 
@@ -168,7 +174,7 @@ namespace Biller
 			// 
 			this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
 									this.stoofToolStripMenuItem,
-									this.aboutToolStripMenuItem});
+									this.aboutToolStripMenuItem_about});
 			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
 			this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
 			this.helpToolStripMenuItem.Text = "Help";
@@ -179,11 +185,12 @@ namespace Biller
 			this.stoofToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
 			this.stoofToolStripMenuItem.Text = "Stoof";
 			// 
-			// aboutToolStripMenuItem
+			// aboutToolStripMenuItem_about
 			// 
-			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-			this.aboutToolStripMenuItem.Text = "About";
+			this.aboutToolStripMenuItem_about.Name = "aboutToolStripMenuItem_about";
+			this.aboutToolStripMenuItem_about.Size = new System.Drawing.Size(107, 22);
+			this.aboutToolStripMenuItem_about.Text = "About";
+			this.aboutToolStripMenuItem_about.Click += new System.EventHandler(this.AboutToolStripMenuItem_aboutClick);
 			// 
 			// textbox_amountDueMonth
 			// 
@@ -287,12 +294,6 @@ namespace Biller
 			this.button_PayABill.UseVisualStyleBackColor = true;
 			this.button_PayABill.Click += new System.EventHandler(this.Button_PayABillClick);
 			// 
-			// otherBillToolStripMenuItem
-			// 
-			this.otherBillToolStripMenuItem.Name = "otherBillToolStripMenuItem";
-			this.otherBillToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.otherBillToolStripMenuItem.Text = "Other Bill";
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,7 +322,7 @@ namespace Biller
 		}
 		private System.Windows.Forms.ToolStripMenuItem otherBillToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem billToolStripMenuItem1;
-		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem_about;
 		private System.Windows.Forms.Button button_PayABill;
 		private System.Windows.Forms.Button button_refresh;
 		private System.Windows.Forms.TextBox textbox_amountDueByDate;
@@ -330,7 +331,7 @@ namespace Biller
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.ToolStripMenuItem billToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem billToolStripMenuItemClick_newUtilityBill;
 		private System.Windows.Forms.ToolStripMenuItem newBillToolStripMenuItem;
 		private System.Windows.Forms.ProgressBar progressBar2;
 		private System.Windows.Forms.ProgressBar progressBar1;

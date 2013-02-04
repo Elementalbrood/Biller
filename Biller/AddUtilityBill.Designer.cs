@@ -77,6 +77,13 @@ namespace Biller
 			// 
 			// textbox_name
 			// 
+			this.textbox_name.AutoCompleteCustomSource.AddRange(new string[] {
+									"Water",
+									"Gas",
+									"Electric",
+									"Rent"});
+			this.textbox_name.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+			this.textbox_name.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
 			this.textbox_name.Location = new System.Drawing.Point(95, 8);
 			this.textbox_name.Name = "textbox_name";
 			this.textbox_name.Size = new System.Drawing.Size(197, 20);

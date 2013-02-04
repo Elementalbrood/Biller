@@ -36,14 +36,12 @@ namespace Biller
 			
 			foreach(Bill b in _bills)
 			{
-				/*
-				if(b.getDate())
+				if(b is UtilityBill)
 				{
-					//could cause trouble based on the type of bill that needs to be added
-					//_bills.Add(new int)
+					
 				}
-				*/
 			}
+			
 			
 		}
 		

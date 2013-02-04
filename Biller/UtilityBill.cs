@@ -17,6 +17,7 @@ namespace Biller
 	{
 		public UtilityBill(string n, double b, DateTime d, int o) : base(n, b, d, o)
 		{
+			TypeOfBill = "Utility";
 			MinBalance = 0;
 		}
 		
