@@ -32,3 +32,16 @@ C:\Users\Sean\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.exe
 C:\Users\Sean\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.pdb
 C:\Users\Sean\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.About.resources
 C:\Users\Sean\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.EditBill.resources
+C:\Users\Elemental\Documents\GitHub\Biller\Biller\bin\Debug\Biller.exe
+C:\Users\Elemental\Documents\GitHub\Biller\Biller\bin\Debug\Biller.pdb
+C:\Users\Elemental\Documents\GitHub\Biller\Biller\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Elemental\Documents\GitHub\Biller\Biller\obj\Debug\Biller.About.resources
+C:\Users\Elemental\Documents\GitHub\Biller\Biller\obj\Debug\Biller.AddUtilityBill.resources
+C:\Users\Elemental\Documents\GitHub\Biller\Biller\obj\Debug\Biller.BillPay.resources
+C:\Users\Elemental\Documents\GitHub\Biller\Biller\obj\Debug\Biller.EditBill.resources
+C:\Users\Elemental\Documents\GitHub\Biller\Biller\obj\Debug\Biller.MainForm.resources
+C:\Users\Elemental\Documents\GitHub\Biller\Biller\obj\Debug\Biller.ListBills.resources
+C:\Users\Elemental\Documents\GitHub\Biller\Biller\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Elemental\Documents\GitHub\Biller\Biller\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Elemental\Documents\GitHub\Biller\Biller\obj\Debug\Biller.exe
+C:\Users\Elemental\Documents\GitHub\Biller\Biller\obj\Debug\Biller.pdb
