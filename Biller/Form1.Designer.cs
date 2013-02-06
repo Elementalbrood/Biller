@@ -207,7 +207,6 @@ namespace Biller
 			this.progressBar_monthBills.Name = "progressBar_monthBills";
 			this.progressBar_monthBills.Size = new System.Drawing.Size(555, 23);
 			this.progressBar_monthBills.TabIndex = 10;
-			//this.progressBar_monthBills.Click += new System.EventHandler(this.ProgressBar1Click);
 			// 
 			// progressBar_creditCards
 			// 
@@ -314,6 +313,7 @@ namespace Biller
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "MainForm";
 			this.Text = "Biller";
+			this.Activated += new System.EventHandler(this.MainFormActivated);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			this.ResumeLayout(false);

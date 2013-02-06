@@ -8,7 +8,7 @@
  */
 namespace Biller
 {
-	partial class BillPay
+	partial class PayBill
 	{
 		/// <summary>
 		/// Designer variable used to keep track of non-visual components.
@@ -107,7 +107,7 @@ namespace Biller
 			this.dateTimePicker_paid.Size = new System.Drawing.Size(123, 20);
 			this.dateTimePicker_paid.TabIndex = 2;
 			// 
-			// BillPay
+			// PayBill
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -119,8 +119,8 @@ namespace Biller
 			this.Controls.Add(this.label_amount_paid);
 			this.Controls.Add(this.label_bill);
 			this.Controls.Add(this.comboBox_bill);
-			this.Name = "BillPay";
-			this.Text = "BillPay";
+			this.Name = "PayBill";
+			this.Text = "PayBill";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}

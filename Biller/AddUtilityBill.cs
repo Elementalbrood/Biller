@@ -78,13 +78,12 @@ namespace Biller
 			if(occ == -1)
 			{
 				MessageBox.Show("An occurence was not selected. Please select an occurence and try again");
+				return;
 			}
 			
 			Data.AddUtilityBillToList(n, bal, date, occ);
 			
 			System.Diagnostics.Debug.WriteLine("Added bill");
-			
-			//textbox_name.AutoCompleteCustomSource.Add(n);
 			
 			this.Close();
 		}

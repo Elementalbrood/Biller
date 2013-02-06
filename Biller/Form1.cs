@@ -125,15 +125,13 @@ namespace Biller
 		
 		void BillerCalendarDateSelected(object sender, DateRangeEventArgs e)
 		{
-			//FIXME: fix later
-			textbox_amountDueMonth.Text = "" + getMonthlyBills();
 			textbox_amountDueByDate.Text = "" + getBillsByDate(e.End);
 		}
 		
 		void Button_PayABillClick(object sender, EventArgs e)
 		{			
-			BillPay bp = new BillPay();
-			bp.ShowDialog();
+			PayBill pb = new PayBill();
+			pb.ShowDialog();
 		}
 		
 		//For editing existing bills
@@ -154,6 +152,12 @@ namespace Biller
 		{
 			About a = new About();
 			a.ShowDialog();
+		}
+		
+		//will be used to update the texboxs about bill information
+		void MainFormActivated(object sender, EventArgs e)
+		{
+			textbox_amountDueMonth.Text = "" + getMonthlyBills();
 		}
 	}
 }

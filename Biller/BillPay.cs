@@ -15,9 +15,9 @@ namespace Biller
 	/// <summary>
 	/// Description of BillPay.
 	/// </summary>
-	public partial class BillPay : Form
+	public partial class PayBill : Form
 	{
-		public BillPay()
+		public PayBill()
 		{
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
@@ -46,13 +46,15 @@ namespace Biller
 			if(!Double.TryParse(s_paid, out d_paid_amount))
 			{
 				MessageBox.Show("Please enter an acceptable pay amount");
+				return;
 			}
 			
 			if(b.Balance < d_paid_amount)
 			{
 				MessageBox.Show("Are you over paying your bill?");
+				return;
 			}
-
+			
 			//this can be used to check bill type
 			if(b is UtilityBill)
 			{
