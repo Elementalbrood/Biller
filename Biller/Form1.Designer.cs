@@ -53,8 +53,8 @@ namespace Biller
 			this.stoofToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutToolStripMenuItem_about = new System.Windows.Forms.ToolStripMenuItem();
 			this.textbox_amountDueMonth = new System.Windows.Forms.TextBox();
-			this.progressBar1 = new System.Windows.Forms.ProgressBar();
-			this.progressBar2 = new System.Windows.Forms.ProgressBar();
+			this.progressBar_monthBills = new System.Windows.Forms.ProgressBar();
+			this.progressBar_creditCards = new System.Windows.Forms.ProgressBar();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
@@ -106,38 +106,38 @@ namespace Biller
 									this.billToolStripMenuItemClick_newUtilityBill,
 									this.otherBillToolStripMenuItem});
 			this.newBillToolStripMenuItem.Name = "newBillToolStripMenuItem";
-			this.newBillToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.newBillToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
 			this.newBillToolStripMenuItem.Text = "New";
 			// 
 			// billToolStripMenuItemClick_newUtilityBill
 			// 
 			this.billToolStripMenuItemClick_newUtilityBill.Name = "billToolStripMenuItemClick_newUtilityBill";
-			this.billToolStripMenuItemClick_newUtilityBill.Size = new System.Drawing.Size(152, 22);
+			this.billToolStripMenuItemClick_newUtilityBill.Size = new System.Drawing.Size(124, 22);
 			this.billToolStripMenuItemClick_newUtilityBill.Text = "Utility Bill";
 			this.billToolStripMenuItemClick_newUtilityBill.Click += new System.EventHandler(this.BillToolStripMenuItem_newUtilityBillClick);
 			// 
 			// otherBillToolStripMenuItem
 			// 
 			this.otherBillToolStripMenuItem.Name = "otherBillToolStripMenuItem";
-			this.otherBillToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.otherBillToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
 			this.otherBillToolStripMenuItem.Text = "Other Bill";
 			// 
 			// saveToolStripMenuItem
 			// 
 			this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-			this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.saveToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
 			this.saveToolStripMenuItem.Text = "Save";
 			// 
 			// infoToolStripMenuItem
 			// 
 			this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-			this.infoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.infoToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
 			this.infoToolStripMenuItem.Text = "Info";
 			// 
 			// stuffToolStripMenuItem
 			// 
 			this.stuffToolStripMenuItem.Name = "stuffToolStripMenuItem";
-			this.stuffToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.stuffToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
 			this.stuffToolStripMenuItem.Text = "Stuff";
 			// 
 			// editToolStripMenuItem
@@ -200,23 +200,22 @@ namespace Biller
 			this.textbox_amountDueMonth.Size = new System.Drawing.Size(115, 20);
 			this.textbox_amountDueMonth.TabIndex = 8;
 			// 
-			// progressBar1
+			// progressBar_monthBills
 			// 
-			this.progressBar1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-			this.progressBar1.Location = new System.Drawing.Point(0, 347);
-			this.progressBar1.Name = "progressBar1";
-			this.progressBar1.Size = new System.Drawing.Size(555, 23);
-			this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-			this.progressBar1.TabIndex = 10;
-			this.progressBar1.Click += new System.EventHandler(this.ProgressBar1Click);
+			this.progressBar_monthBills.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+			this.progressBar_monthBills.Location = new System.Drawing.Point(0, 347);
+			this.progressBar_monthBills.Name = "progressBar_monthBills";
+			this.progressBar_monthBills.Size = new System.Drawing.Size(555, 23);
+			this.progressBar_monthBills.TabIndex = 10;
+			this.progressBar_monthBills.Click += new System.EventHandler(this.ProgressBar1Click);
 			// 
-			// progressBar2
+			// progressBar_creditCards
 			// 
-			this.progressBar2.Location = new System.Drawing.Point(0, 398);
-			this.progressBar2.Name = "progressBar2";
-			this.progressBar2.Size = new System.Drawing.Size(555, 23);
-			this.progressBar2.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-			this.progressBar2.TabIndex = 11;
+			this.progressBar_creditCards.Location = new System.Drawing.Point(0, 398);
+			this.progressBar_creditCards.Name = "progressBar_creditCards";
+			this.progressBar_creditCards.Size = new System.Drawing.Size(555, 23);
+			this.progressBar_creditCards.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+			this.progressBar_creditCards.TabIndex = 11;
 			// 
 			// label1
 			// 
@@ -307,8 +306,8 @@ namespace Biller
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.progressBar2);
-			this.Controls.Add(this.progressBar1);
+			this.Controls.Add(this.progressBar_creditCards);
+			this.Controls.Add(this.progressBar_monthBills);
 			this.Controls.Add(this.textbox_amountDueMonth);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.menuStrip1);
@@ -333,8 +332,8 @@ namespace Biller
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.ToolStripMenuItem billToolStripMenuItemClick_newUtilityBill;
 		private System.Windows.Forms.ToolStripMenuItem newBillToolStripMenuItem;
-		private System.Windows.Forms.ProgressBar progressBar2;
-		private System.Windows.Forms.ProgressBar progressBar1;
+		private System.Windows.Forms.ProgressBar progressBar_creditCards;
+		private System.Windows.Forms.ProgressBar progressBar_monthBills;
 		private System.Windows.Forms.ToolStripMenuItem stoofToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem newWindowToolStripMenuItem;

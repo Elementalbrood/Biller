@@ -63,7 +63,7 @@ namespace Biller
 			}
 			b.PaidOn = DateTime.Today;
 			
-			//TODO: UTILITIES: update the date of when it was paid, update xp bar on Form1
+			//TODO: UTILITIES: update xp bar on Form1
 			this.Close();
 		}
 	}

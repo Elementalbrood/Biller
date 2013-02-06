@@ -41,9 +41,7 @@ namespace Biller
 		}
 		
 		public double getMonthlyBills()
-		{
-			//System.DateTime;
-		
+		{		
 			double current_month = 0;
 			
 			DateTime current = DateTime.Now;
@@ -104,7 +102,7 @@ namespace Biller
 		
 		void Button1Click(object sender, EventArgs e)
 		{
-			progressBar1.PerformStep();
+			progressBar_monthBills.PerformStep();
 		}
 		
 		void Bill_List_Click(object sender, EventArgs e)
@@ -118,11 +116,6 @@ namespace Biller
 			{
 				MessageBox.Show("CONGRATULATIONS! YOU DON'T HAVE ANY BILLS! Power Level = 9001");
 			}
-		}
-		
-		void ProgressBar1Click(object sender, EventArgs e)
-		{
-			
 		}
 		
 		void Button_refreshClick(object sender, EventArgs e)
@@ -143,7 +136,6 @@ namespace Biller
 			bp.ShowDialog();
 		}
 		
-
 		//For editing existing bills
 		//needs to probably create a new form for selecting and stuff
 		void EditBillClick(object sender, EventArgs e)

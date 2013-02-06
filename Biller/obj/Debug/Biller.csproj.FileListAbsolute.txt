@@ -47,3 +47,5 @@ C:\Users\Elemental\Documents\GitHub\Biller\Biller\obj\Debug\Biller.exe
 C:\Users\Elemental\Documents\GitHub\Biller\Biller\obj\Debug\Biller.pdb
 C:\Users\Elemental\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.About.resources
 C:\Users\Elemental\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.EditBill.resources
+C:\Users\Sean Connelly\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.About.resources
+C:\Users\Sean Connelly\Documents\SharpDevelop Projects\Biller\Biller\obj\Debug\Biller.EditBill.resources

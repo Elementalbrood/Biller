@@ -33,6 +33,7 @@ namespace Biller
 			//added 2/2/13 (t_b = type_bill) drop down box
 			double bal = 0;
 			double min_bal = 0;
+			DateTime date = dateTimePicker.Value;
 			
 			if(!(Double.TryParse(b, out bal)))
 			{
@@ -43,12 +44,16 @@ namespace Biller
 			{				
 				if(bal < 0 || min_bal < 0)
 				{
-					MessageBox.Show("Balance and min balance need to positive right???");
+					MessageBox.Show("Balance needs to positive right???");
 					return;
 				}
 			}
 			
-			DateTime date = dateTimePicker.Value;
+			if(date < DateTime.Today)
+			{
+				MessageBox.Show("The date you have chosen is in the past, please choose a future date");
+				return;
+			}
 			
 			int occ = -1;
 			
