@@ -24,7 +24,7 @@ namespace Biller
 		
 		public static List<Bill> _bills = new List<Bill>();
 		
-		StreamWriter writer = new StreamWriter("test.txt");
+		static StreamWriter writer = new StreamWriter("test.txt");
 		
 		//TODO: UTILITIES: save information, and load information during closing and opening respectively
 		
@@ -45,6 +45,8 @@ namespace Biller
 		
 		public static void AddUtilityBillToList(string n, double b, DateTime d, int o)
 		{
+			writer.WriteLine("added bill and stoof");
+			//writer.Close();
 			UtilityBill n_bill = new UtilityBill(n, b, d, o);
 			System.Diagnostics.Debug.WriteLine("n_bill " + n_bill.ToString());
 			_bills.Add(n_bill);
