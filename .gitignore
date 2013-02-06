@@ -163,4 +163,4 @@ pip-log.txt
 .DS_Store
 
 #Sharp Develop
-*/bin/
+Biller/bin/Debug/Biller.exe

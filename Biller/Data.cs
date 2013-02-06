@@ -22,7 +22,6 @@ namespace Biller
 		public const int OCC_BIANNUAL = 2;
 		public const int OCC_ANNUAL = 3;
 		
-		
 		public static List<Bill> _bills = new List<Bill>();
 		
 		
