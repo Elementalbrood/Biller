@@ -41,8 +41,6 @@ namespace Biller
 			
 			
 			
-			
-			
 		}
 		
 		public static void AddUtilityBillToList(string n, double b, DateTime d, int o)
