@@ -36,9 +36,6 @@ namespace Biller
 			//need to check type of bill, can't just add a bill			
 			writer.WriteLine("File created using streamWriter class. ");
 			writer.WriteLine("Where it'll be iunno");
-		
-
-			
 			
 			
 			
