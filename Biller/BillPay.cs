@@ -47,6 +47,11 @@ namespace Biller
 			{
 				MessageBox.Show("Please enter an acceptable pay amount");
 			}
+			
+			if(b.Balance < d_paid_amount)
+			{
+				MessageBox.Show("Are you over paying your bill?");
+			}
 
 			//this can be used to check bill type
 			if(b is UtilityBill)
