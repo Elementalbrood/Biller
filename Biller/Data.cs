@@ -24,7 +24,7 @@ namespace Biller
 		
 		public static List<Bill> _bills = new List<Bill>();
 		
-		
+		StreamWriter writer = new StreamWriter("test.txt");
 		
 		//TODO: UTILITIES: save information, and load information during closing and opening respectively
 		
