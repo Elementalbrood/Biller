@@ -162,5 +162,5 @@ pip-log.txt
 # Mac crap
 .DS_Store
 
-#Sharp Develop
-Biller/bin/Debug/Biller.exe
+#SharpDevelop
+bin/
