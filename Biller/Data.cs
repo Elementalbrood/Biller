@@ -22,12 +22,11 @@ namespace Biller
 		public const int OCC_BIANNUAL = 2;
 		public const int OCC_ANNUAL = 3;
 		
-		//TODO: after loading works load monthly paid billzzzz
-		public static int num_monthly_paid_bills = 0;
-	
 		public static List<Bill> _bills = new List<Bill>();
 		
-		static StreamWriter writer = new StreamWriter("test.txt");
+		static string data_folder = @"Data_Folder";
+		
+		static StreamWriter writer;
 		
 		//TODO: UTILITIES: save information, and load information during closing and opening respectively
 		
@@ -37,14 +36,22 @@ namespace Biller
 			// to occurence data.
 			
 			//need to check type of bill, can't just add a bill			
-			writer.WriteLine("File created using streamWriter class. ");
-			writer.WriteLine("Where it'll be iunno");
+		}
+		
+		//this is were all data init stuff goes
+		// such as directory creation, file loading, etc.
+		public static void DataInit()
+		{
+			System.IO.Directory.CreateDirectory(data_folder);
+			string path = data_folder + "\\test.txt";
+			writer = new StreamWriter(path);
+			writer.WriteLine("Data initalization");
+			writer.Close();
 		}
 		
 		public static void AddUtilityBillToList(string n, double b, DateTime d, int o)
 		{
-			writer.WriteLine("added bill and stoof");
-			//writer.Close();
+			
 			UtilityBill n_bill = new UtilityBill(n, b, d, o);
 			System.Diagnostics.Debug.WriteLine("n_bill " + n_bill.ToString());
 			_bills.Add(n_bill);
@@ -95,7 +102,6 @@ namespace Biller
 					num++;
 				}
 			}
-			
 			return num;
 		}
 		

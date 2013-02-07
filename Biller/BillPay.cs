@@ -71,7 +71,6 @@ namespace Biller
 			if(b.Balance <= 0)
 			{
 				b.Paid = true;
-				Data.num_monthly_paid_bills++;
 			}
 			b.PaidOn = DateTime.Today;
 			

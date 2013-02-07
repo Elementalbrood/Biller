@@ -38,6 +38,8 @@ namespace Biller
 			System.Diagnostics.Debug.WriteLine("CurrentDate > notCurrent : {0}", currentDate > notCurrent);
 			*/
 			progressBar_monthBills.Maximum = 100;
+			
+			Data.DataInit();
 		}
 		
 		public double getMonthlyBills()
@@ -164,11 +166,9 @@ namespace Biller
 		{
 			textbox_amountDueMonth.Text = "" + getMonthlyBills();
 			
-			
-			
 			if(Data.getNumMonthlyBill() > 0)
 			{
-				progressBar_monthBills.Value = (int)((((double)Data.num_monthly_paid_bills)/Data.getNumMonthlyBill())*100);
+				progressBar_monthBills.Value = (int)((((double)Data.getNumPaidMonthlyBill())/Data.getNumMonthlyBill())*100);
 			}
 			else
 			{
