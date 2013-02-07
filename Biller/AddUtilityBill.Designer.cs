@@ -94,7 +94,7 @@ namespace Biller
 			this.textbox_balance.Location = new System.Drawing.Point(93, 52);
 			this.textbox_balance.Name = "textbox_balance";
 			this.textbox_balance.Size = new System.Drawing.Size(199, 20);
-			this.textbox_balance.TabIndex = 5;
+			this.textbox_balance.TabIndex = 4;
 			// 
 			// dateTimePicker
 			// 
@@ -102,14 +102,14 @@ namespace Biller
 			this.dateTimePicker.Location = new System.Drawing.Point(95, 103);
 			this.dateTimePicker.Name = "dateTimePicker";
 			this.dateTimePicker.Size = new System.Drawing.Size(103, 20);
-			this.dateTimePicker.TabIndex = 7;
+			this.dateTimePicker.TabIndex = 5;
 			// 
 			// button_add
 			// 
 			this.button_add.Location = new System.Drawing.Point(70, 327);
 			this.button_add.Name = "button_add";
 			this.button_add.Size = new System.Drawing.Size(68, 28);
-			this.button_add.TabIndex = 8;
+			this.button_add.TabIndex = 11;
 			this.button_add.Text = "Add";
 			this.button_add.UseVisualStyleBackColor = true;
 			this.button_add.Click += new System.EventHandler(this.AddClick);
@@ -119,7 +119,7 @@ namespace Biller
 			this.button_cancel.Location = new System.Drawing.Point(176, 327);
 			this.button_cancel.Name = "button_cancel";
 			this.button_cancel.Size = new System.Drawing.Size(68, 28);
-			this.button_cancel.TabIndex = 9;
+			this.button_cancel.TabIndex = 12;
 			this.button_cancel.Text = "Cancel";
 			this.button_cancel.UseVisualStyleBackColor = true;
 			this.button_cancel.Click += new System.EventHandler(this.CancelClick);
@@ -130,7 +130,7 @@ namespace Biller
 			this.radioButton_monthly.Location = new System.Drawing.Point(159, 199);
 			this.radioButton_monthly.Name = "radioButton_monthly";
 			this.radioButton_monthly.Size = new System.Drawing.Size(77, 24);
-			this.radioButton_monthly.TabIndex = 12;
+			this.radioButton_monthly.TabIndex = 8;
 			this.radioButton_monthly.TabStop = true;
 			this.radioButton_monthly.Text = "Monthly";
 			this.radioButton_monthly.UseVisualStyleBackColor = true;
@@ -141,7 +141,7 @@ namespace Biller
 			this.radioButton_biannual.Location = new System.Drawing.Point(34, 245);
 			this.radioButton_biannual.Name = "radioButton_biannual";
 			this.radioButton_biannual.Size = new System.Drawing.Size(104, 24);
-			this.radioButton_biannual.TabIndex = 13;
+			this.radioButton_biannual.TabIndex = 9;
 			this.radioButton_biannual.TabStop = true;
 			this.radioButton_biannual.Text = "Biannual";
 			this.radioButton_biannual.UseVisualStyleBackColor = true;
@@ -152,7 +152,7 @@ namespace Biller
 			this.radioButton_annual.Location = new System.Drawing.Point(159, 245);
 			this.radioButton_annual.Name = "radioButton_annual";
 			this.radioButton_annual.Size = new System.Drawing.Size(104, 24);
-			this.radioButton_annual.TabIndex = 14;
+			this.radioButton_annual.TabIndex = 10;
 			this.radioButton_annual.TabStop = true;
 			this.radioButton_annual.Text = "Annual";
 			this.radioButton_annual.UseVisualStyleBackColor = true;
@@ -163,7 +163,7 @@ namespace Biller
 			this.radioButton_none.Location = new System.Drawing.Point(34, 199);
 			this.radioButton_none.Name = "radioButton_none";
 			this.radioButton_none.Size = new System.Drawing.Size(104, 24);
-			this.radioButton_none.TabIndex = 15;
+			this.radioButton_none.TabIndex = 7;
 			this.radioButton_none.TabStop = true;
 			this.radioButton_none.Text = "None";
 			this.radioButton_none.UseVisualStyleBackColor = true;
@@ -174,7 +174,7 @@ namespace Biller
 			this.label1.Location = new System.Drawing.Point(12, 154);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(150, 24);
-			this.label1.TabIndex = 16;
+			this.label1.TabIndex = 6;
 			this.label1.Text = "Occurence:";
 			// 
 			// AddUtilityBill
