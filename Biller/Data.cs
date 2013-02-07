@@ -22,6 +22,9 @@ namespace Biller
 		public const int OCC_BIANNUAL = 2;
 		public const int OCC_ANNUAL = 3;
 		
+		//TODO: after loading works load monthly paid billzzzz
+		public static int num_monthly_paid_bills = 0;
+	
 		public static List<Bill> _bills = new List<Bill>();
 		
 		static StreamWriter writer = new StreamWriter("test.txt");
@@ -36,11 +39,6 @@ namespace Biller
 			//need to check type of bill, can't just add a bill			
 			writer.WriteLine("File created using streamWriter class. ");
 			writer.WriteLine("Where it'll be iunno");
-			
-			
-			
-			
-			
 		}
 		
 		public static void AddUtilityBillToList(string n, double b, DateTime d, int o)
@@ -67,10 +65,43 @@ namespace Biller
 			return bi;
 		}
 		
+		public static int getNumMonthlyBill()
+		{
+			int num = 0;
+			
+			DateTime current_month = DateTime.Today;
+			
+			foreach(Bill b in _bills)
+			{
+				if(b.DueDate.Month == current_month.Month)
+				{
+					num++;
+				}
+			}
+			
+			return num;
+		}
+		
+		public static int getNumPaidMonthlyBill()
+		{
+			int num = 0;
+			
+			DateTime current_month = DateTime.Today;
+			
+			foreach(Bill b in _bills)
+			{
+				if(b.DueDate.Month == current_month.Month && b.Paid)
+				{
+					num++;
+				}
+			}
+			
+			return num;
+		}
+		
 		public static void updateOccurences()
 		{
 			int abdul = _bills.Count;
-			//FIXME: needs to check to see if there is a bill already in the list. possibily improve
 			for(int i = 0; i < abdul; i++)
 			{
 				Bill b = _bills[i];

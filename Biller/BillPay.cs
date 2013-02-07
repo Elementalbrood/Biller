@@ -17,8 +17,12 @@ namespace Biller
 	/// </summary>
 	public partial class PayBill : Form
 	{
-		public PayBill()
+		MainForm parent;
+		
+		public PayBill(MainForm f)
 		{
+			parent = f;
+			
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
@@ -59,7 +63,7 @@ namespace Biller
 			if(b is UtilityBill)
 			{
 				System.Diagnostics.Debug.WriteLine("Pay me: " + b.Name);
-				b.Balance -= d_paid_amount; 
+				b.Balance -= d_paid_amount;
 			}
 			
 			//may change when a person tries to pay for something with a minbalance
@@ -67,10 +71,10 @@ namespace Biller
 			if(b.Balance <= 0)
 			{
 				b.Paid = true;
+				Data.num_monthly_paid_bills++;
 			}
 			b.PaidOn = DateTime.Today;
 			
-			//TODO: UTILITIES: update xp bar on Form1
 			this.Close();
 		}
 	}

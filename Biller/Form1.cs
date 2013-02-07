@@ -37,7 +37,7 @@ namespace Biller
 			System.Diagnostics.Debug.WriteLine("CurrentDate < notCurrent : {0}", currentDate < notCurrent);
 			System.Diagnostics.Debug.WriteLine("CurrentDate > notCurrent : {0}", currentDate > notCurrent);
 			*/
-			
+			progressBar_monthBills.Maximum = 100;
 		}
 		
 		public double getMonthlyBills()
@@ -118,6 +118,11 @@ namespace Biller
 			}
 		}
 		
+		public ProgressBar getProgressBar()
+		{
+			return progressBar_monthBills;
+		}
+		
 		void Button_refreshClick(object sender, EventArgs e)
 		{
 			textbox_amountDueMonth.Text = "" + getMonthlyBills();
@@ -130,7 +135,7 @@ namespace Biller
 		
 		void Button_PayABillClick(object sender, EventArgs e)
 		{			
-			PayBill pb = new PayBill();
+			PayBill pb = new PayBill(this);
 			pb.ShowDialog();
 		}
 		
@@ -158,6 +163,17 @@ namespace Biller
 		void MainFormActivated(object sender, EventArgs e)
 		{
 			textbox_amountDueMonth.Text = "" + getMonthlyBills();
+			
+			
+			
+			if(Data.getNumMonthlyBill() > 0)
+			{
+				progressBar_monthBills.Value = (int)((((double)Data.num_monthly_paid_bills)/Data.getNumMonthlyBill())*100);
+			}
+			else
+			{
+				progressBar_monthBills.Value = 0;
+			}
 		}
 	}
 }
