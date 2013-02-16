@@ -47,6 +47,8 @@ namespace Biller
 			this.stuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.billToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.utilityBillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.creditCardBillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -150,10 +152,25 @@ namespace Biller
 			// 
 			// billToolStripMenuItem1
 			// 
+			this.billToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+									this.utilityBillToolStripMenuItem,
+									this.creditCardBillToolStripMenuItem});
 			this.billToolStripMenuItem1.Name = "billToolStripMenuItem1";
-			this.billToolStripMenuItem1.Size = new System.Drawing.Size(90, 22);
+			this.billToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
 			this.billToolStripMenuItem1.Text = "Bill";
-			this.billToolStripMenuItem1.Click += new System.EventHandler(this.EditBillClick);
+			// 
+			// utilityBillToolStripMenuItem
+			// 
+			this.utilityBillToolStripMenuItem.Name = "utilityBillToolStripMenuItem";
+			this.utilityBillToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+			this.utilityBillToolStripMenuItem.Text = "Utility Bill";
+			this.utilityBillToolStripMenuItem.Click += new System.EventHandler(this.UtilityBillToolStripMenuItemClick);
+			// 
+			// creditCardBillToolStripMenuItem
+			// 
+			this.creditCardBillToolStripMenuItem.Name = "creditCardBillToolStripMenuItem";
+			this.creditCardBillToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+			this.creditCardBillToolStripMenuItem.Text = "Credit Card Bill";
 			// 
 			// viewToolStripMenuItem
 			// 
@@ -319,6 +336,8 @@ namespace Biller
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.ToolStripMenuItem creditCardBillToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem utilityBillToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem otherBillToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem billToolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem_about;

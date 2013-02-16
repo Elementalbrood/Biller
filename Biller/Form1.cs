@@ -28,7 +28,6 @@ namespace Biller
 			
 			textbox_amountDueMonth.Text = "" + getMonthlyBills();
 			
-			/*
 			DateTime currentDate = DateTime.Today;
 			DateTime notCurrent = DateTime.Today.AddMonths(6);
 			
@@ -36,7 +35,8 @@ namespace Biller
 			System.Diagnostics.Debug.WriteLine("CurrentDate == notCurrent : {0}", currentDate == notCurrent);
 			System.Diagnostics.Debug.WriteLine("CurrentDate < notCurrent : {0}", currentDate < notCurrent);
 			System.Diagnostics.Debug.WriteLine("CurrentDate > notCurrent : {0}", currentDate > notCurrent);
-			*/
+			System.Diagnostics.Debug.WriteLine("CurrentDate + AddDays(14) : {0}", currentDate.AddDays(14));
+			
 			progressBar_monthBills.Maximum = 100;
 			
 			Data.DataInit();
@@ -143,9 +143,10 @@ namespace Biller
 		
 		//For editing existing bills
 		//needs to probably create a new form for selecting and stuff
-		void EditBillClick(object sender, EventArgs e)
+		void UtilityBillToolStripMenuItemClick(object sender, EventArgs e)
 		{
-			EditBill ed = new EditBill();
+			EditUtilityBill ed = new EditUtilityBill();
+			
 			ed.ShowDialog();
 		}
 		
@@ -175,5 +176,7 @@ namespace Biller
 				progressBar_monthBills.Value = 0;
 			}
 		}
+		
+		
 	}
 }

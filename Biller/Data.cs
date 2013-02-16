@@ -18,9 +18,10 @@ namespace Biller
 	public class Data
 	{
 		public const int OCC_NONE = 0;
-		public const int OCC_MONTHLY = 1;
-		public const int OCC_BIANNUAL = 2;
-		public const int OCC_ANNUAL = 3;
+		public const int OCC_BIWEEKLY = 1;
+		public const int OCC_MONTHLY = 2;
+		public const int OCC_BIANNUAL = 3;
+		public const int OCC_ANNUAL = 4;
 		
 		public static List<Bill> _bills = new List<Bill>();
 		
@@ -107,8 +108,8 @@ namespace Biller
 		
 		public static void updateOccurences()
 		{
-			int abdul = _bills.Count;
-			for(int i = 0; i < abdul; i++)
+			int z = _bills.Count;
+			for(int i = 0; i < z; i++)
 			{
 				Bill b = _bills[i];
 				
@@ -120,6 +121,10 @@ namespace Biller
 						
 						DateTime date;
 						
+						if(b.getOccurence() == OCC_BIWEEKLY)
+						{							
+							date = b.DueDate.AddDays(14);
+						}
 						if(b.getOccurence() == OCC_MONTHLY)
 						{
 							date = b.DueDate.AddMonths(1);

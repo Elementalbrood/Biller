@@ -49,17 +49,23 @@ namespace Biller
 				}
 			}
 			
+			/*
 			if(date < DateTime.Today)
 			{
 				MessageBox.Show("The date you have chosen is in the past, please choose a future date");
 				return;
 			}
+			*/
 			
 			int occ = -1;
 			
 			if(radioButton_none.Checked)
 			{
 				occ = Data.OCC_NONE;
+			}
+			else if(radioButton_biweekly.Checked)
+			{
+				occ = Data.OCC_BIWEEKLY;
 			}
 			else if(radioButton_monthly.Checked)
 			{

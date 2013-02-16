@@ -15,9 +15,9 @@ namespace Biller
 	/// <summary>
 	/// Description of EditBill.
 	/// </summary>
-	public partial class EditBill : Form
+	public partial class EditUtilityBill : Form
 	{
-		public EditBill()
+		public EditUtilityBill()
 		{
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.

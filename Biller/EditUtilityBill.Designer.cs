@@ -8,7 +8,7 @@
  */
 namespace Biller
 {
-	partial class EditBill
+	partial class EditUtilityBill
 	{
 		/// <summary>
 		/// Designer variable used to keep track of non-visual components.
@@ -106,7 +106,7 @@ namespace Biller
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(88, 20);
 			this.label4.TabIndex = 6;
-			this.label4.Text = "Reoccurence:";
+			this.label4.Text = "Occurence:";
 			// 
 			// radioButton1
 			// 
@@ -148,7 +148,7 @@ namespace Biller
 			this.radioButton4.Text = "Annual";
 			this.radioButton4.UseVisualStyleBackColor = true;
 			// 
-			// EditBill
+			// EditUtilityBill
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -164,8 +164,8 @@ namespace Biller
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.comboBox_editBill);
 			this.Controls.Add(this.label1);
-			this.Name = "EditBill";
-			this.Text = "EditBill";
+			this.Name = "EditUtilityBill";
+			this.Text = "Edit Utility Bill";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}

@@ -61,9 +61,9 @@
       <DependentUpon>BillPay.cs</DependentUpon>
     </Compile>
     <Compile Include="Data.cs" />
-    <Compile Include="EditBill.cs" />
-    <Compile Include="EditBill.Designer.cs">
-      <DependentUpon>EditBill.cs</DependentUpon>
+    <Compile Include="EditUtilityBill.cs" />
+    <Compile Include="EditUtilityBill.Designer.cs">
+      <DependentUpon>EditUtilityBill.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs" />
     <Compile Include="Form1.Designer.cs">
@@ -87,8 +87,8 @@
     <EmbeddedResource Include="BillPay.resx">
       <DependentUpon>BillPay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditBill.resx">
-      <DependentUpon>EditBill.cs</DependentUpon>
+    <EmbeddedResource Include="EditUtilityBill.resx">
+      <DependentUpon>EditUtilityBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

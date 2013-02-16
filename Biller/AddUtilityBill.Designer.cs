@@ -49,6 +49,7 @@ namespace Biller
 			this.radioButton_annual = new System.Windows.Forms.RadioButton();
 			this.radioButton_none = new System.Windows.Forms.RadioButton();
 			this.label1 = new System.Windows.Forms.Label();
+			this.radioButton_biweekly = new System.Windows.Forms.RadioButton();
 			this.SuspendLayout();
 			// 
 			// label_name
@@ -127,7 +128,7 @@ namespace Biller
 			// radioButton_monthly
 			// 
 			this.radioButton_monthly.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-			this.radioButton_monthly.Location = new System.Drawing.Point(159, 199);
+			this.radioButton_monthly.Location = new System.Drawing.Point(215, 199);
 			this.radioButton_monthly.Name = "radioButton_monthly";
 			this.radioButton_monthly.Size = new System.Drawing.Size(77, 24);
 			this.radioButton_monthly.TabIndex = 8;
@@ -138,7 +139,7 @@ namespace Biller
 			// radioButton_biannual
 			// 
 			this.radioButton_biannual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-			this.radioButton_biannual.Location = new System.Drawing.Point(34, 245);
+			this.radioButton_biannual.Location = new System.Drawing.Point(12, 255);
 			this.radioButton_biannual.Name = "radioButton_biannual";
 			this.radioButton_biannual.Size = new System.Drawing.Size(104, 24);
 			this.radioButton_biannual.TabIndex = 9;
@@ -149,7 +150,7 @@ namespace Biller
 			// radioButton_annual
 			// 
 			this.radioButton_annual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-			this.radioButton_annual.Location = new System.Drawing.Point(159, 245);
+			this.radioButton_annual.Location = new System.Drawing.Point(215, 255);
 			this.radioButton_annual.Name = "radioButton_annual";
 			this.radioButton_annual.Size = new System.Drawing.Size(104, 24);
 			this.radioButton_annual.TabIndex = 10;
@@ -160,7 +161,7 @@ namespace Biller
 			// radioButton_none
 			// 
 			this.radioButton_none.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-			this.radioButton_none.Location = new System.Drawing.Point(34, 199);
+			this.radioButton_none.Location = new System.Drawing.Point(12, 199);
 			this.radioButton_none.Name = "radioButton_none";
 			this.radioButton_none.Size = new System.Drawing.Size(104, 24);
 			this.radioButton_none.TabIndex = 7;
@@ -177,11 +178,22 @@ namespace Biller
 			this.label1.TabIndex = 6;
 			this.label1.Text = "Occurence:";
 			// 
+			// radioButton_biweekly
+			// 
+			this.radioButton_biweekly.Location = new System.Drawing.Point(105, 229);
+			this.radioButton_biweekly.Name = "radioButton_biweekly";
+			this.radioButton_biweekly.Size = new System.Drawing.Size(104, 24);
+			this.radioButton_biweekly.TabIndex = 13;
+			this.radioButton_biweekly.TabStop = true;
+			this.radioButton_biweekly.Text = "Biweekly";
+			this.radioButton_biweekly.UseVisualStyleBackColor = true;
+			// 
 			// AddUtilityBill
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(323, 377);
+			this.Controls.Add(this.radioButton_biweekly);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.radioButton_none);
 			this.Controls.Add(this.radioButton_annual);
@@ -201,6 +213,7 @@ namespace Biller
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.RadioButton radioButton_biweekly;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.RadioButton radioButton_none;
 		private System.Windows.Forms.RadioButton radioButton_annual;
