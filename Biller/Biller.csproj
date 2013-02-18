@@ -97,5 +97,11 @@
       <DependentUpon>ListBills.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Database\Database\Database.csproj">
+      <Project>{76004623-4BBE-44DE-AAB5-019C9B0D3C3B}</Project>
+      <Name>Database</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

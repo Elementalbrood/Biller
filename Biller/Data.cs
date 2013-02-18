@@ -9,6 +9,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using Database;
 
 namespace Biller
 {
@@ -26,8 +27,9 @@ namespace Biller
 		public static List<Bill> _bills = new List<Bill>();
 		
 		static string data_folder = @"Data_Folder";
-		
+		static string saved_data = "\\bills.billz";
 		static StreamWriter writer;
+		static StreamWriter billsaver;
 		
 		//TODO: UTILITIES: save information, and load information during closing and opening respectively
 		
@@ -36,8 +38,15 @@ namespace Biller
 			//TODO: UTILITIES: when loaded check to see if new bills need to be added due
 			// to occurence data.
 			
-			//need to check type of bill, can't just add a bill			
+			//need to check type of bill, can't just add a bill		
+
 		}
+		/*
+		public ~Data()
+		{
+			billsaver.Close();
+		}
+		*/
 		
 		//this is were all data init stuff goes
 		// such as directory creation, file loading, etc.
@@ -45,14 +54,23 @@ namespace Biller
 		{
 			System.IO.Directory.CreateDirectory(data_folder);
 			string path = data_folder + "\\test.txt";
+			
+			
+			
 			writer = new StreamWriter(path);
 			writer.WriteLine("Data initalization");
+			
+			
+			path = data_folder + saved_data;
+			billsaver = new StreamWriter(path);
+			
+			
 			writer.Close();
 		}
 		
 		public static void AddUtilityBillToList(string n, double b, DateTime d, int o)
 		{
-			
+			billsaver.WriteLine("added bill " + n);
 			UtilityBill n_bill = new UtilityBill(n, b, d, o);
 			System.Diagnostics.Debug.WriteLine("n_bill " + n_bill.ToString());
 			_bills.Add(n_bill);
