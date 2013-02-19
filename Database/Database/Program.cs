@@ -97,9 +97,9 @@ namespace Database
 		
 		
 		
-		public void Insert(string name, int age)
+		public void Insert(string table, string name, int age)
 		{
-			string query = "INSERT INTO test2 ( name, age) VALUES('" + name + "', " + age  + ")";
+			string query = "INSERT INTO " + table + " (name, age) VALUES('" + name + "', " + age  + ")";
 			
 			if(this.OpenConnection() == true)
 			{
@@ -149,12 +149,14 @@ namespace Database
 		{
 			DataMonip db = new DataMonip();
 			
+			string t = "test";
 			
-			db.Insert("john", 12);
 			
-			db.Insert("kevin", 21);
-			db.Insert("ture", 20);
-			db.Insert("will", 20);
+			db.Insert(t, "john", 12);
+			
+			db.Insert(t, "kevin", 21);
+			db.Insert(t, "ture", 20);
+			db.Insert(t, "will", 20);
 			
 			List<string>[] list = db.Select();
 			
