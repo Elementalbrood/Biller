@@ -1,8 +1,8 @@
 ﻿/*
  * Created by SharpDevelop.
  * User: Elemental
- * Date: 1/28/2013
- * Time: 2:17 PM
+ * Date: 2/23/2013
+ * Time: 5:41 PM
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
@@ -21,11 +21,11 @@ namespace Biller
 		/// </summary>
 		[STAThread]
 		private static void Main(string[] args)
-		{			
+		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new MainForm());
-			Console.ReadLine();
 		}
+		
 	}
 }

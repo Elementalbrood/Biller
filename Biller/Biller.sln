@@ -2,9 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 # SharpDevelop 4.3
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biller", "Biller\Biller.csproj", "{3CE90807-B9B5-4C68-8C08-778B7D9FA6D6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "..\Database\Database\Database.csproj", "{76004623-4BBE-44DE-AAB5-019C9B0D3C3B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biller", "Biller\Biller.csproj", "{633233DB-E89F-4EA1-981F-83999118BDCB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,13 +10,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3CE90807-B9B5-4C68-8C08-778B7D9FA6D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3CE90807-B9B5-4C68-8C08-778B7D9FA6D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3CE90807-B9B5-4C68-8C08-778B7D9FA6D6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3CE90807-B9B5-4C68-8C08-778B7D9FA6D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{76004623-4BBE-44DE-AAB5-019C9B0D3C3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{76004623-4BBE-44DE-AAB5-019C9B0D3C3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{76004623-4BBE-44DE-AAB5-019C9B0D3C3B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{76004623-4BBE-44DE-AAB5-019C9B0D3C3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{633233DB-E89F-4EA1-981F-83999118BDCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{633233DB-E89F-4EA1-981F-83999118BDCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{633233DB-E89F-4EA1-981F-83999118BDCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{633233DB-E89F-4EA1-981F-83999118BDCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 EndGlobal
