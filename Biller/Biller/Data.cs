@@ -20,9 +20,6 @@ namespace Biller
 	/// </summary>
 	public class Data
 	{
-		SQLiteMonip bob = new SQLiteMonip();
-		
-		
 		public const int OCC_NONE = 0;
 		public const int OCC_BIWEEKLY = 1;
 		public const int OCC_MONTHLY = 2;
@@ -57,6 +54,24 @@ namespace Biller
 		// such as directory creation, file loading, etc.
 		public static void DataInit()
 		{
+			
+			
+			SQLiteMonip bob = new SQLiteMonip(data_folder + "\\test.s3db");
+		
+			bob.ExecuteNonQuery("create table test(one int, message varchar(30));");
+			
+			bob.ExecuteNonQuery("insert into test(one, message) values (1, 'hello');");
+			bob.ExecuteNonQuery("insert into test(one, message) values (2, 'world');");
+			bob.ExecuteNonQuery("insert into test(one, message) values (3, '!');");
+
+			
+			DataTable t = bob.GetDataTable("select one, message from test;");
+			
+			
+			DataRow[] k = t.Select();
+			
+			System.Console.WriteLine(k.Length);
+			
 			/*
 			System.IO.Directory.CreateDirectory(data_folder);
 			string path = data_folder + "\\test.txt";
@@ -73,10 +88,6 @@ namespace Biller
 			
 			writer.Close();
 			*/
-			
-			
-
-			
 		}
 		
 		public static void AddUtilityBillToList(string n, double b, DateTime d, int o)

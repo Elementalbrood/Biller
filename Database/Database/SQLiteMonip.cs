@@ -27,10 +27,15 @@ namespace Database
 		
 		public SQLiteMonip(String inputFile)
 		{
-			String loc = @"test.db";
+			//SQLiteConnection.CreateFile(inputFile);
+			//SQLiteConnection.
 			
-			SQLiteConnection.CreateFile(loc);
-			dbConnection = String.Format("Database Source={0}", inputFile + ";");
+			if(!System.IO.Directory.Exists(inputFile))
+			{
+				SQLiteConnection.CreateFile(inputFile);
+			}
+			
+			dbConnection = String.Format("Data Source={0}", inputFile);
 		}
 		
 		public SQLiteMonip(Dictionary<String, String> connectionOpts)
@@ -72,7 +77,16 @@ namespace Database
 			cnn.Open();
 			SQLiteCommand mycommand = new SQLiteCommand(cnn);
 			mycommand.CommandText = sql;
-			int rowsUpdate = mycommand.ExecuteNonQuery();
+			
+			int rowsUpdate = 0;
+			try
+			{
+				rowsUpdate = mycommand.ExecuteNonQuery();
+			}
+			catch(Exception e)
+			{
+				
+			}
 			cnn.Close();
 			return rowsUpdate;
 		}

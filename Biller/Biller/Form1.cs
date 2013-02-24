@@ -39,8 +39,6 @@ namespace Biller
 			System.Diagnostics.Debug.WriteLine("CurrentDate + AddDays(14) : {0}", currentDate.AddDays(14));
 			
 			progressBar_monthBills.Maximum = 100;
-			
-			Data.DataInit();
 		}
 		
 		public double getMonthlyBills()

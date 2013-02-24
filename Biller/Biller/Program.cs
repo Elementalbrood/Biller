@@ -22,9 +22,14 @@ namespace Biller
 		[STAThread]
 		private static void Main(string[] args)
 		{
+			Data.DataInit();
+			
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new MainForm());
+			
+			
+			
 		}
 		
 	}
