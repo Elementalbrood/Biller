@@ -12,8 +12,6 @@ using System.Data;
 using System.Data.SQLite;
 using System.Windows.Forms;
 
-//using MySql.Data.MySqlClient;
-
 namespace Database
 {
 	public class SQLiteMonip
@@ -30,7 +28,8 @@ namespace Database
 			//SQLiteConnection.CreateFile(inputFile);
 			//SQLiteConnection.
 			
-			if(!System.IO.Directory.Exists(inputFile))
+			
+			if(!System.IO.File.Exists(inputFile))
 			{
 				SQLiteConnection.CreateFile(inputFile);
 			}
@@ -49,16 +48,39 @@ namespace Database
 			dbConnection = str;
 		}
 		
-		public DataTable GetDataTable(string sql)
+		public DataSet GetDataTable(string sql)
+		{
+			DataSet ds = new DataSet();
+			
+			try
+			{
+				SQLiteConnection cnn = new SQLiteConnection(dbConnection);
+				cnn.Open();
+				SQLiteCommand mycommand = new SQLiteCommand(sql, cnn);
+				
+				SQLiteDataAdapter da = new SQLiteDataAdapter(mycommand);
+				
+				da.Fill(ds);
+				cnn.Close();
+			}
+			catch(Exception e)
+			{
+				throw new Exception(e.Message);
+			}
+			return ds;
+		}
+		
+		public bool tableExist(string table)
 		{
 			DataTable dt = new DataTable();
+			
 			
 			try
 			{
 				SQLiteConnection cnn = new SQLiteConnection(dbConnection);
 				cnn.Open();
 				SQLiteCommand mycommand = new SQLiteCommand(cnn);
-				mycommand.CommandText = sql;
+				mycommand.CommandText = "select name from sqlite_master where type='table' and name ='" + table + "';";
 				SQLiteDataReader reader = mycommand.ExecuteReader();
 				dt.Load(reader);
 				reader.Close();
@@ -66,27 +88,27 @@ namespace Database
 			}
 			catch(Exception e)
 			{
-				throw new Exception(e.Message);
+				
 			}
-			return dt;
+			
+			//(''\('__')/'') <(RWAAAR)
+			
+			
+			if(dt.Rows.Count > 0)
+			{
+				return true;
+			}
+			return false;
 		}
 		
 		public int ExecuteNonQuery(string sql)
 		{
 			SQLiteConnection cnn = new SQLiteConnection(dbConnection);
 			cnn.Open();
-			SQLiteCommand mycommand = new SQLiteCommand(cnn);
-			mycommand.CommandText = sql;
+			SQLiteCommand mycommand = new SQLiteCommand(sql, cnn);
 			
 			int rowsUpdate = 0;
-			try
-			{
-				rowsUpdate = mycommand.ExecuteNonQuery();
-			}
-			catch(Exception e)
-			{
-				
-			}
+			rowsUpdate = mycommand.ExecuteNonQuery();
 			cnn.Close();
 			return rowsUpdate;
 		}
@@ -173,6 +195,8 @@ namespace Database
 		
 		public bool ClearDB()
 		{
+			return false;
+			/*
 			DataTable tables;
 			
 			try
@@ -188,6 +212,7 @@ namespace Database
 			{
 				return false;
 			}
+			*/
 		}
 		
 		public bool ClearTable(String table)
@@ -203,139 +228,4 @@ namespace Database
 			}
 		}
 	}
-	
-	/*
-	public class DataMonip
-	{
-		private MySqlConnection connection;
-		private string server;
-		private string database;
-		private string uid;
-		private string password;
-		
-		public DataMonip()
-		{
-			Initialize();
-		}
-		
-		private void Initialize()
-		{
-			server = "localhost";
-			database = "csharpdata";
-			uid = "brandon";
-			password = "freckles";
-			string connectionString;
-			connectionString = "Server=" + server + ";"  + "Database=" + database + ";" + "Uid=" + uid + ";" + "Pwd=" + password + ";";
-			
-			using(connection = new MySqlConnection(connectionString))
-			{
-				try
-				{
-					connection.Open();
-				}
-				catch(MySqlException ex)
-				{
-					switch (ex.Number)
-					{
-						default:
-							System.Console.WriteLine(ex.Message);
-							break;
-					}
-					
-					connection.Clone();
-				}
-			}
-		}
-		
-		private bool OpenConnection()
-		{
-			try
-			{
-				connection.Open();
-				return true;
-			}
-			catch(MySqlException ex)
-			{	
-				switch(ex.Number)
-				{
-					case 0:
-						MessageBox.Show("cannot connect to server");
-						break;
-					
-					case 1045:
-						MessageBox.Show("Invalid username/password");
-						break;
-					default:
-						MessageBox.Show(ex.Message);
-						break;
-				}
-				return false;
-			}
-		}
-		
-		private bool CloseConnection()
-		{
-			try
-			{
-				connection.Close();
-				return true;
-			}
-			catch(MySqlException ex)
-			{
-				MessageBox.Show(ex.Message);
-				return false;
-			}
-		}
-		
-		
-		
-		public void Insert(string table, string name, int age)
-		{
-			string query = "INSERT INTO " + table + " (name, age) VALUES('" + name + "', " + age  + ")";
-			
-			if(this.OpenConnection() == true)
-			{
-				MySqlCommand cmd = new MySqlCommand(query, connection);
-				
-				cmd.ExecuteNonQuery();
-				
-				this.CloseConnection();
-			}
-		}
-		
-		public List<string>[] Select()
-		{
-			string query = "SELECT * FROM test2";
-			
-			List<string>[] list = new List<string>[3];
-			
-			list[0] = new List<string>();
-			list[1] = new List<string>();
-			list[2] = new List<string>();
-			
-			if(this.OpenConnection() == true)
-			{
-				MySqlCommand cmd = new MySqlCommand(query, connection);
-				
-				MySqlDataReader dataReader = cmd.ExecuteReader();
-				
-				
-				while(dataReader.Read())
-				{
-					list[0].Add(dataReader["id"] + "");
-					list[1].Add(dataReader["name"] + "");
-					list[2].Add(dataReader["age"] + "");
-				}
-				
-				dataReader.Close();
-				
-				this.CloseConnection();
-				
-			}
-			
-			return list;
-		}
-	}
-
-	*/
 }

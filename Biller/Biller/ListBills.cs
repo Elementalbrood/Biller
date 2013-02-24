@@ -54,7 +54,8 @@ namespace Biller
 				d.Rows.Add(b.Name, b.TypeOfBill, b.MinBalance, b.Balance, b.DueDate.Date, b.Paid, b.PaidOn);
 			}
 			
-			return d;
+			//d = Data.getBills().Tables[0];
+			return Data.getTable("bills").Tables[0];
 		}
 		
 		void ListBillCancelButtonClick(object sender, EventArgs e)

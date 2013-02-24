@@ -109,6 +109,8 @@ namespace Biller
 		void Bill_List_Click(object sender, EventArgs e)
 		{
 			ListBills b = new ListBills();
+			b.ShowDialog();
+			/*
 			if(Data._bills.Count > 0)
 			{
 				b.ShowDialog();
@@ -117,6 +119,8 @@ namespace Biller
 			{
 				MessageBox.Show("CONGRATULATIONS! YOU DON'T HAVE ANY BILLS! Power Level = 9001");
 			}
+			*/
+			
 		}
 		
 		public ProgressBar getProgressBar()

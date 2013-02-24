@@ -50,27 +50,44 @@ namespace Biller
 		}
 		*/
 		
+		static SQLiteMonip bob;
+		
 		//this is were all data init stuff goes
 		// such as directory creation, file loading, etc.
 		public static void DataInit()
 		{
+			if(!System.IO.Directory.Exists(data_folder))
+			{
+				System.IO.Directory.CreateDirectory(data_folder);
+			}
+			
+			bob = new SQLiteMonip(data_folder + "\\test.s3db");
+			
+			//Initial file initialization 
 			
 			
-			SQLiteMonip bob = new SQLiteMonip(data_folder + "\\test.s3db");
-		
-			bob.ExecuteNonQuery("create table test(one int, message varchar(30));");
+			//sqllite table creation
+			if(!bob.tableExist("bills"))
+			{
+				bob.ExecuteNonQuery("create table bills(name text, type varchar(30), min_bal real, balance real, due text, paid text, date_paid text);");
+			}
+			if(!bob.tableExist("test"))
+			{
+				//bob.ExecuteNonQuery("create table test(one int, message varchar(30));");
+			}
 			
-			bob.ExecuteNonQuery("insert into test(one, message) values (1, 'hello');");
-			bob.ExecuteNonQuery("insert into test(one, message) values (2, 'world');");
-			bob.ExecuteNonQuery("insert into test(one, message) values (3, '!');");
+			//bob.ExecuteNonQuery("insert into test(one, message) values (1, 'hello');");
+			//bob.ExecuteNonQuery("insert into test(one, message) values (2, 'world');");
+			//bob.ExecuteNonQuery("insert into test(one, message) values (3, '!');");
 
+			//oooh man dat data
+			/*
+			 *	•_•)
+			 *	( •_•)>⌐■-■
+			 *	(⌐■_■) 
+			 */
 			
-			DataTable t = bob.GetDataTable("select one, message from test;");
-			
-			
-			DataRow[] k = t.Select();
-			
-			System.Console.WriteLine(k.Length);
+			//OOOH ya
 			
 			/*
 			System.IO.Directory.CreateDirectory(data_folder);
@@ -90,15 +107,24 @@ namespace Biller
 			*/
 		}
 		
+		public static DataSet getTable(string table)
+		{
+			return bob.GetDataTable("select * from " + table + ";");
+		}
+		
 		public static void AddUtilityBillToList(string n, double b, DateTime d, int o)
 		{
-			billsaver.WriteLine("added bill " + n);
+			//billsaver.WriteLine("added bill " + n);
 			UtilityBill n_bill = new UtilityBill(n, b, d, o);
 			System.Diagnostics.Debug.WriteLine("n_bill " + n_bill.ToString());
 			_bills.Add(n_bill);
+			
+			bob.ExecuteNonQuery("insert into bills(name, type, balance, due, paid) values ('" + n + "', 'utilities', " +  b + ", '" + d.Day.ToString() + "', 'No');");
+			
 			System.Diagnostics.Debug.WriteLine("Current number of bills " + _bills.Count);
 		}
 
+		
 		private static Bill getBillByDate(DateTime date)
 		{
 			Bill bi = null;
@@ -182,6 +208,7 @@ namespace Biller
 							date = DateTime.Now;
 						}
 						
+						//stuff
 						if(!_bills.Contains(getBillByDate(date)))
 						{
 							AddUtilityBillToList(b.Name, b.Balance, date, b.getOccurence());
