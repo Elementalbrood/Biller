@@ -20,6 +20,9 @@ namespace Biller
 	/// </summary>
 	public class Data
 	{
+		SQLiteMonip bob = new SQLiteMonip();
+		
+		
 		public const int OCC_NONE = 0;
 		public const int OCC_BIWEEKLY = 1;
 		public const int OCC_MONTHLY = 2;
