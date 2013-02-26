@@ -22,7 +22,6 @@ namespace Biller
 		public PayBill(MainForm f)
 		{
 			parent = f;
-			
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//

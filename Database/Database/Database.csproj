@@ -41,10 +41,10 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data.SQLite">
-      <HintPath>..\..\..\..\..\..\Desktop\sqlite install\System.Data.SQLite.dll</HintPath>
+      <HintPath>..\..\sqlitedll\System.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.SQLite.Linq">
-      <HintPath>..\..\..\..\..\..\Desktop\sqlite install\System.Data.SQLite.Linq.dll</HintPath>
+      <HintPath>..\..\sqlitedll\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />

@@ -118,8 +118,9 @@ namespace Biller
 			UtilityBill n_bill = new UtilityBill(n, b, d, o);
 			System.Diagnostics.Debug.WriteLine("n_bill " + n_bill.ToString());
 			_bills.Add(n_bill);
+			string format = "MM/dd/yyyy";
 			
-			bob.ExecuteNonQuery("insert into bills(name, type, balance, due, paid) values ('" + n + "', 'utilities', " +  b + ", '" + d.Day.ToString() + "', 'No');");
+			bob.ExecuteNonQuery("insert into bills(name, type, balance, due, paid) values ('" + n + "', 'utilities', " +  b + ", '" + d.ToString(format) + "', 'No');");
 			
 			System.Diagnostics.Debug.WriteLine("Current number of bills " + _bills.Count);
 		}
@@ -191,7 +192,7 @@ namespace Biller
 						{							
 							date = b.DueDate.AddDays(14);
 						}
-						if(b.getOccurence() == OCC_MONTHLY)
+						else if(b.getOccurence() == OCC_MONTHLY)
 						{
 							date = b.DueDate.AddMonths(1);
 						}
