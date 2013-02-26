@@ -43,7 +43,7 @@ namespace Biller
 			// 
 			// listBillCancelButton
 			// 
-			this.listBillCancelButton.Location = new System.Drawing.Point(376, 382);
+			this.listBillCancelButton.Location = new System.Drawing.Point(418, 382);
 			this.listBillCancelButton.Name = "listBillCancelButton";
 			this.listBillCancelButton.Size = new System.Drawing.Size(78, 33);
 			this.listBillCancelButton.TabIndex = 3;
@@ -63,7 +63,7 @@ namespace Biller
 			this.billDisplay.Name = "billDisplay";
 			this.billDisplay.ReadOnly = true;
 			this.billDisplay.ShowEditingIcon = false;
-			this.billDisplay.Size = new System.Drawing.Size(463, 356);
+			this.billDisplay.Size = new System.Drawing.Size(496, 356);
 			this.billDisplay.TabIndex = 5;
 			// 
 			// ListBills
@@ -71,7 +71,7 @@ namespace Biller
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
-			this.ClientSize = new System.Drawing.Size(466, 427);
+			this.ClientSize = new System.Drawing.Size(497, 427);
 			this.Controls.Add(this.listBillCancelButton);
 			this.Controls.Add(this.billDisplay);
 			this.Name = "ListBills";
