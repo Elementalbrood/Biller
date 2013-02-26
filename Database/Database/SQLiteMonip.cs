@@ -151,7 +151,7 @@ namespace Database
 			return returnCode;
 		}
 		
-		public void UpdateBill(String n, double b, DateTime d, int o)
+		public void UpdateBill()
 		{
 			
 		}

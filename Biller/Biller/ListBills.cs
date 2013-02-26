@@ -35,6 +35,7 @@ namespace Biller
 			billDisplay.DataSource = getResults();
 			
 			
+			
 		}
 		
 		private DataTable getResults()
@@ -53,8 +54,10 @@ namespace Biller
 			{
 				d.Rows.Add(b.Name, b.TypeOfBill, b.MinBalance, b.Balance, b.DueDate.Date, b.Paid, b.PaidOn);
 			}
+		
+			//TODO: Get a row in the list of bills
 			
-			//d = Data.getBills().Tables[0];
+			//return Data.getBill("Water").Tables[0];
 			return Data.getTable("bills").Tables[0];
 		}
 		

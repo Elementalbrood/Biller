@@ -112,6 +112,11 @@ namespace Biller
 			return bob.GetDataTable("select * from " + table + ";");
 		}
 		
+		public static DataSet getBill(string name)
+		{
+			return bob.GetDataTable("select name from bills where name='" + name + "' and balance= *';'");
+		}
+		
 		public static void AddUtilityBillToList(string n, double b, DateTime d, int o)
 		{
 			//billsaver.WriteLine("added bill " + n);
