@@ -109,12 +109,12 @@ namespace Biller
 		
 		public static DataSet getTable(string table)
 		{
-			return bob.GetDataTable("select * from " + table + ";");
+			return bob.GetDataTable("SELECT * FROM " + table + ";");
 		}
 		
 		public static DataSet getBill(string name)
 		{
-			return bob.GetDataTable("select name from bills where name='" + name + "' and balance= *';'");
+			return bob.GetDataTable("SELECT * FROM bills WHERE name IN('" + name + "');");
 		}
 		
 		public static void AddUtilityBillToList(string n, double b, DateTime d, int o)
@@ -125,7 +125,7 @@ namespace Biller
 			_bills.Add(n_bill);
 			string format = "MM/dd/yyyy";
 			
-			bob.ExecuteNonQuery("insert into bills(name, type, balance, due, paid) values ('" + n + "', 'utilities', " +  b + ", '" + d.ToString(format) + "', 'No');");
+			bob.ExecuteNonQuery("INSERT INTO bills(name, type, balance, due, paid) values ('" + n + "', 'utilities', " +  b + ", '" + d.ToString(format) + "', 'No');");
 			
 			System.Diagnostics.Debug.WriteLine("Current number of bills " + _bills.Count);
 		}

@@ -21,6 +21,8 @@ namespace Biller
 		//except for none
 		
 		int occurance;
+		int bill_ID = 0;
+		static int ID_INC = 0;
 		
 		string name;
 		//TODO: do stuff with type_bill
@@ -45,6 +47,7 @@ namespace Biller
 			
 			balance = b;
 			due_date = d;
+			bill_ID = ID_INC++;
 		}
 		
 		//TODO when adding credit cards have min_bal set
