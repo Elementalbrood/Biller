@@ -11,8 +11,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 
-using Database;
-
 namespace Biller
 {
 	/// <summary>
@@ -50,7 +48,6 @@ namespace Biller
 		}
 		*/
 		
-		static SQLiteMonip bob;
 		
 		//this is were all data init stuff goes
 		// such as directory creation, file loading, etc.
@@ -61,20 +58,10 @@ namespace Biller
 				System.IO.Directory.CreateDirectory(data_folder);
 			}
 			
-			bob = new SQLiteMonip(data_folder + "\\test.s3db");
-			
 			//Initial file initialization 
 			
 			
 			//sqllite table creation
-			if(!bob.tableExist("bills"))
-			{
-				bob.ExecuteNonQuery("create table bills(name text, type varchar(30), min_bal real, balance real, due text, paid text, date_paid text);");
-			}
-			if(!bob.tableExist("test"))
-			{
-				//bob.ExecuteNonQuery("create table test(one int, message varchar(30));");
-			}
 			
 			//bob.ExecuteNonQuery("insert into test(one, message) values (1, 'hello');");
 			//bob.ExecuteNonQuery("insert into test(one, message) values (2, 'world');");
@@ -107,15 +94,6 @@ namespace Biller
 			*/
 		}
 		
-		public static DataSet getTable(string table)
-		{
-			return bob.GetDataTable("SELECT * FROM " + table + ";");
-		}
-		
-		public static DataSet getBill(string name)
-		{
-			return bob.GetDataTable("SELECT * FROM bills WHERE name IN('" + name + "');");
-		}
 		
 		public static void AddUtilityBillToList(string n, double b, DateTime d, int o)
 		{
@@ -125,7 +103,7 @@ namespace Biller
 			_bills.Add(n_bill);
 			string format = "MM/dd/yyyy";
 			
-			bob.ExecuteNonQuery("INSERT INTO bills(name, type, balance, due, paid) values ('" + n + "', 'utilities', " +  b + ", '" + d.ToString(format) + "', 'No');");
+			//bob.ExecuteNonQuery("INSERT INTO bills(name, type, balance, due, paid) values ('" + n + "', 'utilities', " +  b + ", '" + d.ToString(format) + "', 'No');");
 			
 			System.Diagnostics.Debug.WriteLine("Current number of bills " + _bills.Count);
 		}

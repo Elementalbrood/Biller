@@ -57,8 +57,7 @@ namespace Biller
 		
 			//TODO: Get a row in the list of bills
 			
-			return Data.getBill("Water").Tables[0];
-			//return Data.getTable("bills").Tables[0];
+			return d;
 		}
 		
 		void ListBillCancelButtonClick(object sender, EventArgs e)
